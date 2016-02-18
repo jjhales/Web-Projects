@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Juanita Hales">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RXLookup-Profile</title>
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body id="rxlookup">
+	<!-- container to hold all html -->
+	<div class="container">
+		<!-- header rx lookup logo -->
+		<header><img src="images/RXLookup.png"></header>
+	<!-- first row navigation	 -->
+	<div class="row">
+		<!-- collapseable menu bar for smaller screens -->
+		<nav class="navbar navbar-default navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse"> 
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		<!-- collapseable navs in case additional navigation is required	 -->
+		<div class="collapse navbar-collapse" id="collapse">
+		<!-- mail, login and signup navbar -->
+		<ul class="nav navbar-nav">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="mailto:rxlookupadmin@rxlookup.com">Contact Us</a></li>
+			<li><a href="dashboard.html">Dashboard</a></li>
+			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+				<ul id="tags" class="dropdown-menu" role="menu">
+					<li><a href="#">Thyroid</a></li>
+					<li><a href="#">Hormone replacement</a></li>
+				</ul>
+			<li><a href="index.html">Sign Out</a></li>
+		</ul>
+		</nav>
+	<!-- closes row 1 -->
+	</div>
+
+		<!-- row 2 search box -->
+	<div class="row" id="searchmain">
+			<input class="mastertooltip" data-toggle="tooltip" data-placement="right" title="Enter the medication name to begin your search" type="text" name="searchbox" id="searchbox" placeholder="Enter Medication Name">
+			<button id="search" type="button" class="btn btn-default btn-lg">Search</button>
+	<!-- close row 2 -->
+	</div>
+
+
+	<!-- closes container -->
+</div>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+	

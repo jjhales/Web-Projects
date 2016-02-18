@@ -1,0 +1,268 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Juanita Hales">
+	<meta name="description" content="A Better Life Homecare Inc main page">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>A Better Life Homecare Inc</title>
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body id="ablhi">
+	<div class="container">
+		<header id="toplogo">
+			<img src="images/lp.gif" alt="A better life homecare logo" height="120px" width="155px" align="left">
+			<h1 id="abl">A Better Life Homecare Incorporated</h1>
+		</header>
+
+		<nav id="ablhi-navigation" class="navbar navbar-default" role="navigation">
+  			<div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contact, #servicesmenu">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			    </div>
+ <!-- Collect the nav links, forms, and other content for toggling -->
+		   <!-- contact us dropdown -->
+			    <div class="collapse navbar-collapse" id="contact">
+			      <ul class="nav navbar-nav">
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><strong>Contact Information</strong><span class="caret"></span></a>
+			          <ul class="dropdown-menu" role="menu">
+			            <li class="divider"></li>
+			            	<li><a href="mailto:Teresa@abetterlifehomecareinc.com"><strong>Email Us</strong></a></li>
+			            <li class="divider"></li>
+			            	<li><a href="#">Telephone: <strong>321-525-0941</strong></a></li>
+			            <li class="divider"></li>
+			            	<li><a href="#">Location: <strong>Palm Bay, FL 32909</strong></a></li>
+			          </ul>
+			        </li>  
+			     	<li><a href="gallery.html" style="color:white;">Gallery</a></li>
+			        <li><a href="#community" data-toggle="modal" data-target="#community" style="color:white;">Community Activities</a></li>  
+			        
+			      </ul>
+			     </div>
+			    
+		    </div> <!-- closes container for nav -->
+		</nav>
+
+		<!-- pictures carousel carousel.js bootstrap -->
+		<div id="carousel" class="carousel slide" data-ride="carousel">
+			
+			<!-- indicators -->
+			<ol class="carousel indicators">
+				<li data-target="#carousel" data-slide-to="0" class="active" style="display:none;"></li>
+				<li data-target="#carousel" data-slide-to="1" style="display:none;"></li>
+				<li data-target="#carousel" data-slide-to="2" style="display:none;"></li>
+			</ol>
+			
+			<!-- wrapper for slides -->
+			<div class="carousel-inner">
+				<div id="welcome" class="item active">
+					<img src="images/lp.gif" alt="A better life homecare logo" height="240px" width="150px" style="float:right;">
+						<h2 class="purp">We are a privately owned and operated homecare agency based out of Palm Bay Florida. We aim to make our clients and their families lives better through quality services. We offer Life Skills Development, In Home Support Services, Supportive Living Coaching, and Respite care. Our clients are our family and no special need is too great for us.</h2>
+						<canvas height="77" width="97"></canvas>
+				</div>
+
+				<div class="item">
+					<div>
+						<h2 style="text-align:center" class="purp">We keep our clients involved in the community.</h2>
+							<h4>We work with many different organizations throughout the Palm Bay area. We consult with our clients to find their interests and try to accomodate and facilitiate community inclusion. Our clients participate with Easter Seals, Special Spotlight Theatre, and Special Olympics.</h4>
+					</div>
+					<img src="images/V__FF94.jpg" height="180" width="180" class="img-circle" style="float:left">
+					<a href="http://www.easterseals.com/"><img src="images/easterseals.jpg" height="150" width="150" style="float:right"></a>
+					<div>
+						<a href="http://www.specialolympics.org/"><img src="images/specialolympics.jpg" height="150" width="150"></a>
+						<a href="http://www.specialspotlight.com/"><img src="images/specialspotlight.jpeg" height="180" width="280"></a>
+						</div>
+				</div>
+				
+				<div class="item">
+					<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cu" style="float:right;">Contact Us</button>
+						<h2 style="text-align:center" class="purp">At your service</h2>
+						<h4>Whether a new customer with an initial consultation or a returning customer with a question contact us and an experienced staff member will contact you at your convenience to assist you. Customer support and satisfaction is valuable to us. Let us assist you today.</h4>
+							<!-- button activated modal -->
+						
+						
+						
+						<canvas id="myimg2" height="236" width="354"></canvas>
+							<img id="img3" src="images/V__7491.jpg" alt="..." class="img-thumbnail" style="display:none;">
+						
+						<canvas id="myimg3" height="236" width="354"></canvas>
+						<img id="img4" src="images/V__F695.jpg" alt="..." class="img-thumbnail" style="display:none;">
+						
+				</div> 
+			</div><!-- closes wrappper -->
+			
+			<!-- controls -->
+			<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    			<span class="glyphicon glyphicon-chevron-left"></span>
+  			</a>
+  			<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    			<span class="glyphicon glyphicon-chevron-right"></span>
+  			</a>
+		</div> <!-- closes entire carousel -->
+
+			  
+		
+		<!-- welcome message -->
+		
+		<!-- services tabs tabs.js-->
+		<div id="services" class="col-lg-8 col-md-8">
+		<!-- definitions derived from http://www.fflddresources.org/html/service_descriptions.htm -->
+			<h3 class="purp">Services we provide</h3>
+			<ul class="nav nav-pills" role="tablist">
+				<li id="comptab" class="active"><a href="#companion" role="tab" data-toggle="tab">Life Skills Development</a></li>
+				<li id="ihsstab"><a href="#ihss" role="tab" data-toggle="tab">In Home Support Services</a></li>
+				<li id="slctab"><a href="#slc" role="tab" data-toggle="tab">Supported Living Coach</a></li>
+				<li id="resptab"><a href="#respite" role="tab" data-toggle="tab">Respite</a></li>
+
+			</ul>
+			<div id="definitions" class="tab-content">
+				<div id="respite" class="tab-pane fade"><p>Supervision and support to an individual whose primary caregiver is not available for a brief period.</p> <canvas height="110" width="730"></canvas></div>
+				<div id="slc" class="tab-pane fade"><p>Support provided to individuals living on their own in the community. This could include training and assistance for adults to live in and maintain a household of their choosing in the community.</p> <canvas height="90" width="730"></canvas></div>
+				<div id="ihss" class="tab-pane fade"><p>Services provided to an individual living in his/her own home that include companionship, personal care and other activities necessary to maintain the individual in a supported living situation. The support worker may perform grocery shopping, housekeeping, and cooking responsibilities or may conduct training programs designed by the supported living coach to teach these and other daily living skills.</p><canvas height="50" width="730"></canvas></div>
+				<div id="companion" class="tab-pane fade in active"><p>Services provided to individuals that include supervision and socialization activities. The activities are intended to teach the individuals specific skills related to a goal that has been identified by the individual. These services are typically provided in a community setting. Examples of acceptable companion activities are: going to the library, getting a library card, learning how to use the library and checking out books or videos for personal use; shopping for groceries; or going to an animal shelter to learn about animals, and volunteering or assisting at the animal shelter.</p><canvas height="10" width="730"></canvas></div>
+			</div>
+		</div>
+
+		
+		<!-- contact us modal.js -->
+		<div id ="cu" class="modal fade">
+			<div id="cu2">
+				<div class="modal-dialog">
+					<div id="mhead" class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+       					<h3 class="modal-title">Contact Us</h3>
+      				</div>
+	      				<div class="modal-body">
+	      					<form id="schedule" class="form-horizontal" action="mailto:Teresa@abetterlifehomecareinc.com">
+								<label>Name:</label>
+									<input type="text" placeholder="name" class="form-control"></br>
+								<label>Email:</label>
+									<input type="email" class="form-control" placeholder="yourname@email.com"></br>
+								<label>Phone number:</label>
+									<input type="text" placeholder="optional" class="form-control"></br>
+								<label>Would you prefer to be contacted via email or phone?</label>
+									<input type="radio" id="email" name="contacttype">Email
+									<input type="radio" id="phone" name="contacttype">Phone</br>
+								<label>A brief description of how we can be of service:</label>
+									<textarea class="form-control" rows="3"></textarea></br>
+							</form>
+							<div id="mfoot" class="modal-footer">
+								<button type="close" class="btn btn-primary" data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div> <!-- footer -->
+						</div> <!-- body -->
+				</div> <!-- dialog -->
+			</div> <!-- cu2 -->
+		</div> <!-- cu close -->
+		
+		<div id ="community" class="modal fade">
+			<div class="map_container">
+				<!-- dot links -->
+				<a class="dot" style="top:685px; left:235px;" location="SL" place="slpb"></a>
+				<a class="dot" style="top:665px; left:238px;" location="TC" place = "tcs"></a>
+				<a class="dot" style="top:310px; left:280px;" location="CC" place="cclh"></a>
+				<a class="dot" style="top:510px; left:175px;" location="ZO" place="zoo"></a>
+				<a class="dot" style="top:380px; left:135px;" location="NS" place="muse"></a>
+				<!-- form for select options -->
+				<form id="mapform" name="mapform" class="form_location" method="post" action="">
+					<select name="location" id="location">
+						<option value="SL">Shore Lanes Palm Bay</option>
+						<option value="TC">Turkey Creek Sanctuary</option>
+						<option value="CC">Cape Canaveral Light House</option>
+						<option value="ZO">Brevard Zoo</option>
+						<option value="NS">Brevard Museum of History and Natural Science</option>
+						<option value="all" selected="selected">Show All Locations</option>
+					</select>
+				</form>
+				<button id="closemap" type="close" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+			
+
+				<div class="detail_container">
+					<div class="place_detail">
+						<h3>Choose a Location</h3>
+						<p>Click a dot on the map or choose from the dropdown menu.</p>
+					</div>
+				</div>
+			</div>
+				
+			<div class="place_detail_container">
+				
+				<div class="place_detail" id="slpb">
+					<div class="place_info">
+						<h2>Shore Lanes Palm Bay</h2>
+							<h3>Palm Bay</h3>
+								<a href="http://www.shorelanes.com/index.php"> Shore Lanes Palm Bay</a>
+					</div>
+						<div class="clear_both"></div>
+				</div>
+
+				<div class="place_detail" id="tcs">
+					<div class="place_info">
+						<h2>Turkey Creek Sanctuary</h2>
+							<h3>Palm Bay</h3>
+								<a href="http://www.tripadvisor.com/Attraction_Review-g34528-d308586-Reviews-Turkey_Creek_Sanctuary-Palm_Bay_Florida.html">Turkey Creek Sanctuary</a>
+					</div>
+						<div class="clear_both"></div>
+				</div>
+
+				<div class="place_detail" id="cclh">
+					<div class="place_info">
+						<h2>Cape Canaveral Light House</h2>
+							<h3>Cape Canaveral</h3>
+								<a href="http://www.afspacemuseum.org/">Air Force Space Museum</a>
+					</div>
+						<div class="clear_both"></div>
+				</div>
+				
+				<div class="place_detail" id="zoo">
+					<div class="place_info">
+						<h2>Brevard Zoo</h2>
+							<h3>Melbourne</h3>
+								<a href="https://brevardzoo.org/">Brevard Zoo</a>
+					</div>
+						<div class="clear_both"></div>
+				</div>
+				
+				<div class="place_detail" id="muse">
+					<div class="place_info">
+						<h2>Museum of History and Natural Science</h2>
+							<h3>Rockledge</h3>
+								<a href="http://www.tripadvisor.com/Attraction_Review-g34144-d2707416-Reviews-Brevard_Museum_of_History_and_Natural_Science-Cocoa_Florida.html">Brevard Museum of History and Natural Science</a>
+					</div>
+						<div class="clear_both"></div>
+				</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- footer -->
+		<footer id="ablhi-footer">
+			<ul>
+				<li><strong>Location: Palm Bay, FL 32909</strong></li>
+				<li><strong>Phone Number: 321-525-0941</strong></li>
+			</ul>
+		</footer>
+
+	</div> <!-- closes container -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+</body>
+</html>
+

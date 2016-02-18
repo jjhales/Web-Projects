@@ -1,0 +1,74 @@
+/*added tropical background to body*/
+body{
+	background-image: url("../images/sunset.jpg");
+	font-family: 'Questrial', sans-serif;
+}
+/*added margins, changed background color, added padding, and border-radius */
+#wrapper{
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-bottom: 5%;
+	background: #FAF5FE;
+	padding-top: 0.5%;
+	padding-left: 10%;
+	padding-right: 1%;
+	padding-bottom: 14%;
+	border-radius: 8px;
+}
+/*added google font to h2, h4 and decreased the margin*/
+h2, h4{
+	font-family: 'Nunito', sans-serif;
+	margin: 1px;
+
+}
+/*removed styling from buttons*/
+button{
+	padding: 0px;
+	border:none;
+	background-color: #FAF5FE;
+}
+/*unstyled lists*/
+ul{
+	list-style: none;
+}
+/*moved over and enlarged logo*/
+#logo{
+	width: 15%;
+	padding-left: 1.5%;
+}
+/*styled RMO Broadcast button*/
+.reg-button{
+	padding:15px;
+	border-radius: 6px;
+	border:1px solid white;
+	border-color: #17DEDA;
+	background-color:#40B5B3; 
+	color: white;
+	margin-left:5px;
+	font-weight: bold;
+	font-size: 1em;
+}
+/*Moved over close button and floated to the right of players*/
+#close{
+	float: right;
+}
+/*styled footer text white*/
+footer{
+	color: white;
+}
+/*styled tooltip*/
+a.tooltip{
+	display: inline;
+	position: relative;
+}
+/*pointed tooltip to title of a on hover*/
+a.tooltip:hover{
+	content: attr(title);
+}
+/*styled button hovers to light up teal when hovered*/
+.reg-button:hover, #WPR:hover, #PalmsP:hover{
+	border: 3px solid teal;
+	border-radius: 6px;
+}
+
+

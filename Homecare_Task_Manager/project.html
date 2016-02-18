@@ -1,0 +1,107 @@
+
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Project-Homecare Task Manager</title>
+	<meta name="description" content="Project management site directed towards medical professionals. Dashboard page">
+	<meta name="author" content="Juanita Hales">
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- CSS concatenated and minified via ant build script-->
+	<link rel="stylesheet" href="css/style.css?v=1">
+	<link rel="stylesheet" href="css/custom-theme/jquery-ui-1.10.4.custom.css">
+
+	<!-- end CSS-->
+	
+</head>
+		
+<body>
+	<!--container to wrap all of the html code-->
+    <div class="container">
+		
+		<!--Dashboard header shows logo and welcome member plus a signout button-->
+        <header id="dashboard">
+			<div class = "userid"><p>Welcome Member</p></div>
+			<img id="logo_sm_1" src="images/HCTM_Logo.png" alt="logo_small">
+			<input name="logOut" type="button" id="logOut" value="Sign Out"/>
+			<button id="dashboard_button">Dashboard</button></a>	
+			<h1 id="pj">Projects</h1>
+		</header>
+		
+		<!--Add project button to pop up modal-->
+		<div id="add_pj">
+			<a href="#" class="modalClick">
+				<img id="add" class="modalClick" src="images/plus.png" alt="add_button" width="37" height="37">Add Project
+			</a>
+		</div>
+
+		
+		<!--Modal overlay with form for adding project and status-->
+		<div id="overlay">
+			<div id="modal">
+				<span class="close">X</span>
+				<h3>Add Project</h3>
+				<div id="add">
+					<form id="apj">
+						<label>Project Name:</label> </br>
+							<input class="masterTooltip" title="Enter a project name. This field is required." name="projectName" type="text" id="projectName" required></br>
+						<label>Project Description:</label> </br>
+							<input class="masterTooltip" title="Give your Project a description." name="projectDescription" type="text" id="projectDescription" required></br>
+						<label>Project Due Date:</label> </br>
+							<input class="masterTooltip" title="When is your project due?" name="projectDueDate" type="text" id="datepicker" required></br>
+						<label for="status">Choose Status:</label></br>
+						<label class="mystatus">
+							<input type="radio" name="status" class="status" id="normal"><img id="projectStatus"class="masterTooltip" title="Normal" src="images/good.png" width="55" height="55">
+						</label>
+						<label class="mystatus">
+							<input type="radio" name="status" class="status" id="delayed"><img id="projectStatus" class="masterTooltip" title="Delayed" src="images/on-hold.png" width="55" height="55">
+						</label>
+						<label class="mystatus">
+							<input type="radio" name="status" class="status" id="urgent"><img id="projectStatus" class="masterTooltip" title="Urgent" src="images/schedule.png" width="55" height="55">
+						</label>
+						<label class="mystatus">
+							<input type="radio" name="status" class="status" id="complete"><img id="projectStatus" class="masterTooltip" title="Complete" src="images/complete.png" width="55" height="55">
+						</label>
+						<button name="submit" id="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+        
+        
+        
+		<div id='projectlist'><h2>Current Projects</h2></div>
+		<ul id="sortable" class="projects"></ul>
+	
+
+
+		
+		<!-- jquery -->
+			<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+			<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+			<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.core.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.widget.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.datepicker.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.mouse.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.sortable.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.draggable.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.position.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.tooltip.js"></script>
+			<script type="text/javascript" src="ui/jquery.ui.button.js"></script>
+			<script src="ui/jquery.ui.dialog.js"></script>
+
+			
+			<!-- plugins -->
+			<!-- main -->
+			<script type="text/javascript" src="js/main.js"></script>
+	<!--closes container-->
+    </div>
+</body>
+</html>
+

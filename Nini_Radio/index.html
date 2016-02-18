@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	     <!-- css -->
+		<link href="css/custom.css" type="text/css" rel="stylesheet" />
+		<!-- google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+		<meta charset="utf-8"/>
+		<!-- javascript -->
+		<script type="text/javascript" src="js/main.js"></script>
+       	<title>Nini Radio -- Samples</title>
+    </head>
+	<body>
+    	<!-- Nini Radio logo -->
+    	<header><img id="logo" src="images/Nini-Radio.png"></header>
+    	<!-- wrapper to hold all content -->
+    	<div id="wrapper">	
+    	<!-- audio links button triggers function RMOB in main JS -->
+    		<div id="audio-links">
+    			<h2>Audio Samples</h2></br>
+	    		<!-- button to play RMO broadcast all buttons have tooltips -->
+	    		<button id="RMO-broadcast" class="reg-button" name="RMO-broadcast" onclick="RMOB()" style="margin-bottom:1.5%"><a title='RMO Broadcast sample of Nini Lounge on Nini Radio' class='tooltip'>
+	    			RMO Broadcast
+	    		</button>
+	    	</div> <!-- end audio links -->
+	    	<!-- empty div to hold audio player when button is clicked and main js puts in video -->
+	    	<div id="audio_player"></div>
+	    	<!-- decription of audio file shows below audio player when audio is selected for play by main.js -->
+	    	<div id="RMO-desc" style="display:none;">
+					<p><strong>Title:</strong> RMO-Broadcast</p>
+					<p><strong>Author:</strong> Juanita Hales</p>
+					<p><strong>Duration:</strong> 3 minutes 48 seconds</p>
+					<p><strong>Description:</strong> RMO-Broadcast is an audio sample from Nini Lounge on Nini Radio. On this sampling Nini features samplings from electronic dance music. The first sampling is from the song "Hymnal". We hear from our sponsor A Better Life Homecare which is a service coming to the Brevard County area. The next sampling is from the song "Sunlight in the City". Nini talks about the decision to go back to school and features Full Sail University.</p>
+			</div>
+			<!-- video links section -->
+	    	<div id="video-links">
+	    		<h2>Video Samples</h2>
+			<!-- empty div to hold video player above video buttons -->
+	    		<div id="video_player" style="float:left; padding-right:2.5%;"><p></p></div>
+	    		<!-- description of videos shows below each video when played styling turned on while video is active from main.js -->
+	    		<div id="wpr-desc" style="display:none;">
+					<p><strong>Title:</strong> Web Photo Resizer</p>
+					<p><strong>Author:</strong> Juanita Hales</p>
+					<p><strong>Duration:</strong> 36 seconds</p>
+					<p><strong>Description:</strong> Web Photo Resizer is a video of the website <a href="http://webresizer.com/">webresizer.com</a> This is a breif overview of what Web Photo Resizer has to offer. If you need to resize a photo for an email or website Web Photo Resizer is a good place to start looking for help. The application run completely online freeing up your local computer. Web resizer allows you to reduce image sizes, crop photos, sharpen, change the height and width, rotate, adjust contrast, brightness, saturation, convert to black and white, and add a border. The best part is that it's completely free and there is no registration needed.</p>
+				</div>
+				<div id="ptr-desc" style="display:none;">
+					<p><strong>Title:</strong> Palms Tropical Resort</p>
+					<p><strong>Author:</strong> Juanita Hales</p>
+					<p><strong>Duration:</strong> 1 minute</p>
+					<p><strong>Description:</strong> Palms Tropical Resort has many ammenities and is a great vacation spot if you love fun in the sun. They specialize in watersports, diving, and hiking. They have premier beach property. They hire the most experienced guides to help you along the way. They also offer all inclusive packages. After a long day of playing outside get ready for the nightlife with great dining venues. Their rooms are very comfortable and allow you to recharge.Get back to nature and adventure with Palms Tropical Resort today.</p>
+				</div>
+		    	<!-- buttons for videos buttons call functions in main js -->
+		    	<div style="clear:both;">
+		    		<button id="WPR" name="WPR" onclick="webresizer()">
+		    			<a title='Web Photo Resizer Comercial' class='tooltip'>
+		    				<img class="video_pl" src="images/wpr.jpg" width='300px'height='200px'></img></a>
+		    		</button> 
+	    			<button id="PalmsP" name="PalmsP" onclick="marketing()">
+	    				<a title='Palms Tropical Resort Comercial' class='tooltip'>
+	    					<img class="video_pl" src="images/ptr.jpg"></img></a>
+	    			</button>
+	    		</div>
+	    	</div> <!-- end video links -->
+	    	<!-- download button unhides div downloads -->
+	    	<div id="dlbutton">
+	    		<button id="dlpop" class="reg-button" onclick="alinks_show()"> <a title='Download our featured media!' class='tooltip'>Downloads</button>
+			</div>
+			<!-- downloads hidden until button clicked and close button reshows dlbutton -->
+			<div id="downloads" style="display:none;">
+				<button onclick='closelinks()'><a title='Close downloads' class='tooltip'><img src='images/close-button-md.png' alt='close'style='width:65%;'></button>
+	    		<ul id="video1" style="float:left;">
+	    			<h4>Web Photo Resizer</h4>
+	    			<li><a href='Video/web-resizer.mp4' download >Web-Resizer.mp4 size: 12.1Mb  resolution: 720X1280 codec: H.264</a></li>
+	    			<li><a href='Video/web-resizer.flv' download >Web-Resizer.flv size: 8.9Mb resolution: 720X1280 codec: flash</a></li>
+	    			<li><a href='Video/web-resizer.ogv' download >Web-Resizer.ogv size: 8.62Mb resolution:720X1280 codec: ogg</strong></a></li>
+	    			<li><a href='Video/web-resizer.webm' download >Web-Resizer.webm size: 3.05Mb  resolution: 720X1280 codec: webm</a></li>
+	    		</ul>
+	    		<ul id="video2" style="float:left;">
+	    			<h4>Palms Tropical</h4>
+		    		<li><a href='Video/marketing-ad.mp4' download >Marketing-Ad.mp4 size: 23Mb  resolution: 480X720 codec: H.264</a></li>
+		    		<li><a href='Video/marketing-ad.flv' download >Marketing-Ad.flv size: 13.1Mb  resolution: 480X720 codec: flash</a></li>
+		    		<li><a href='Video/marketing-ad.ogv' download >Marketing-Ad.ogv size: 19.9Mb  resolution: 480X720 codec: ogg</a></li>
+		    		<li><a href='Video/marketing-ad.webm' download >Marketing-Ad.webm size: 16Mb  resolution: 480X720 codec: webm</a></li>
+		    	</ul>
+		    	<ul id="audio1" style="float:left;">
+		    		<h4>RMO Broadcast</h4>
+		    		<li><a href='audio/RMO-broadcast.mp3' download >RMO-Broadcast.mp3 size: 5.24Mb codec: mp3 </a></li>
+		    		<li><a href='audio/RMO-broadcast.aif' download >RMO-Broadcast.aiff size: 38Mb codec: aiff</a></li>
+		    		<li><a href='audio/RMO-broadcast.aac' download >RMO-Broadcast.aac size: 3.47Mb codec: aac</a></li>
+		    		<li><a href='audio/RMO-broadcast.aac' download >RMO-Broadcast.flv size: 3.6Mb codec: flash </a></li>
+		    	</ul>
+		    </div> <!-- end downloads -->
+	 	</div> <!-- end wrapper -->
+		<!-- footer list unstyled floated right -->
+	    <footer>
+	    	<ul style="list-style-type:none; float:right; margin-right:2%;">
+		    	<li>Full Sail University Project</li>
+		    	<li id="name"> Juanita Hales </li>
+		    </ul>
+		 </footer>
+    </body>
+</html>

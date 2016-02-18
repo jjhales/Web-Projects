@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Juanita Hales">
+	<meta name="description" content="bootstrap carousel example complete">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bootstrap Carousel Complete</title>
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+    
+    <div id="carouselexample" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carouselexample" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselexample" data-slide-to="1"></li>
+        <li data-target="#carouselexample" data-slide-to="2"></li>
+      </ol>
+    <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images/carousel-indicators.JPG" alt="carousel indicators">
+          <div class="carousel-caption">
+            Carousel Indicators
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/carousel-inner.JPG" alt="carousel inner">
+          <div class="carousel-caption">
+            Carousel Inner
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/carousel-controls.JPG" alt="carousel controls">
+          <div class="carousel-caption">
+            Carousel Controls
+          </div>
+        </div>
+      </div>
+    <!-- Controls -->
+      <a class="left carousel-control" href="#carouselexample" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carouselexample" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+  </div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>

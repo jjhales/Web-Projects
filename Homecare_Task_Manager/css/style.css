@@ -1,0 +1,283 @@
+/*universal styling across pages*/
+/*sets the body max width font and background color*/
+body{
+	max-width: 960px;
+	font:
+	normal 14pt 'Roboto Regular';
+	background: #e6fdff;
+}
+/*sets parameters for container so the body has a 5% margin*/
+.container{
+	width: 95%;
+	margin: 0 auto;
+}
+/*Sets all H1's fonts to center and font size colors and type for*/
+h1{
+	text-align: center;
+	font: 
+	bold 36pt 'Perpetua';
+	color: #ff6800;
+}
+/*Sets all H2 fonts size, color, type and adds a little padding*/
+h2{
+	font:
+	bold 24pt 'Perpetua';
+	color: #264a4d;
+	padding-left: 3%;
+}
+/*sets ul properties for no list type*/
+ul { 
+	list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; 
+}
+/*pads li's over and sets margin*/
+li { 
+	margin: 5px; padding: 5px;
+}
+/*gives margin to the fieldsets*/
+fieldset div {
+	margin-bottom: 2em;
+}
+
+/*sets the input fields to the same size and shape*/
+.masterTooltip{
+	padding: 3px;
+	border:1px solid #bcc1c1;
+	border-radius: 7px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+/*applies styling to buttons login and signout*/
+#signinButton,#register, #logOut, #submit, .deletebtn{
+	background: linear-gradient(to bottom, hsla(180,82%,82%,1) 0%,hsla(179,65%,45%,1) 0%,hsla(185,34%,22%,1) 16%,hsla(185,34%,22%,1) 40%,hsla(185,34%,22%,1) 59%,hsla(185,34%,22%,1) 78%,hsla(185,45%,45%,1) 100%);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border: 3px solid #fff;
+	border-radius: 10px;
+	font:
+	bold 1.0em 'Georgia';
+	color: #fff;
+	text-shadow:1px #000;
+}
+/*applies styling to the signup and cancel button and dashboard*/
+#signup, #cancel, #dashboard_button{
+	margin-left: 25%;
+	background: linear-gradient(to bottom, hsla(21,98%,85%,1) 0%,hsla(21,87%,57%,1) 50%,hsla(24,100%,50%,1) 51%,hsla(21,95%,68%,1) 100%);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border: 3px solid #fff;
+	border-radius: 10px;
+	font:
+	bold 1.0em 'Georgia';
+	color: #fff;
+	text-shadow:1px #000;
+}
+
+#intro #signup{
+	margin-left: 28%;
+}
+/*tooltip styling*/
+/*.tooltip{
+	display: none;
+	position:absolute;
+	z-index: 9999;
+	border: 1px solid #00eeff;
+	background-color: #264a4d;
+	border-radius: 3px;
+	padding: 5px;
+	color: #ff6800;
+	font-size: 10px 'Roboto';
+}*/
+/*individual styling mow controlled by jquery custom ui*/
+/*Moves login to the left*/
+#login{
+	padding-left: 35%;
+}
+/*Sets the font of member login*/
+#ml{
+	font: 
+	bold 14pt 'Georgia';
+}
+/*pads all logos over*/
+#logo,#logo_sm{
+	padding-left: 5%;	
+}
+/*centers introduction paragraph and button*/
+#intro{
+	padding-right: 8%;
+	padding-left: 12%;
+}
+/*sets max width of three articles and floats them side by side added a little padding between articles*/
+#tasks,#contact,#signupl{
+	width:30%;
+	float: left;
+	padding-left: 2.5%;
+}
+/*padded contact down to be level with tasks*/
+#contact{
+	padding-top: 2%;
+}
+/*Moves the pictures to the center of the article*/
+#features img{
+	padding-left: 25%;
+}
+/*Moves the signup form to the middle of the page*/
+#addmember{
+	padding-left: 37%;
+}
+
+/*removed cancel buttons margin and applied a larger one to put it under submit button*/
+#cancel{
+		margin-left:37%;
+}
+/*floated the dashboard right to align next tot he sign out button*/
+#dashboard_button{
+	float: right;
+}
+/*floated tabs left changed background color set height and width of the tabs box*/
+.mytabs{
+	float: left;
+	background: #264a4d;
+	width: 640px;
+	padding:10px;
+	border-radius: 10px;
+	margin-top: 15px;
+}
+/*remove ul list styling from the .tabs class li's*/
+.tabs li{
+	list-style: none;
+	display: inline;
+}
+/*styled .tabs a links*/
+.tabs a{
+	padding:5px 10px;
+	display: inline-block;
+	background: linear-gradient(to bottom, hsla(21,98%,85%,1) 0%,hsla(21,87%,57%,1) 50%,hsla(24,100%,50%,1) 51%,hsla(21,95%,68%,1) 100%);
+	color: #fff;
+	text-decoration: none;
+}
+/*set background for when tab active*/
+.tabs a.active{
+	background: #ffa466;
+	color: #000;
+}
+/*wrapped text and button for each tab in a container to style background*/
+.mytabs .container{
+	background: white;
+	padding: 10px;
+	margin-bottom: 2.5%;
+	border-radius: 10px;
+}
+/*made button background transparent*/
+.mytabs .container button{
+	background: transparent;
+}
+/*floated the logo on the dashboard page to move it to the top left corner*/
+#logo_sm_1{
+	float:left;
+}
+/*floated the welcome message and projects next to the logo on dashboard page*/
+#wb, #pj{
+	float: left;
+	padding-left: 2.5%;
+}
+/*made the sign out button float to the right hand corener of dashboard*/
+#logOut{
+	float: right;
+}
+/*moving add project button below header*/
+#add_pj{
+	padding-top: 15%;
+}
+/*floated project images left to align*/
+#add_pj img{
+	float: left;
+}
+/*creating overlay for the modal to be on top of*/
+#overlay{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: none;
+}
+/*modal dialog box when add project is clicked*/
+#modal{
+	width: 350px;
+	background: #e6fdff;
+	border-radius: 12px;
+	position: relative;
+	top: 50%;
+	bottom: 50%;
+	margin-top: -200px;
+	margin-left: 200px;
+	z-index: 1001;
+	display: none;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	padding-left: 3%;
+
+}
+/*modal close button closes modal window*/
+#modal .close{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 3px;
+	border: 1px solid #000;
+	cursor: pointer;
+	background: linear-gradient(to bottom, hsla(21,98%,85%,1) 0%,hsla(21,87%,57%,1) 50%,hsla(24,100%,50%,1) 51%,hsla(21,95%,68%,1) 100%);
+}
+/*hides the radio buttons*/
+input[type="radio"]{
+	display: none;
+}
+/*changes cursor to a pointer and adds a transparent border*/
+input[type="radio"] + img{
+	cursor: pointer;
+	border: 2px solid transparent;
+}
+/*adds a border around checked images for status*/
+input[type="radio"]:checked +img{
+	border: 2px solid #264a4d;
+}
+
+/*hovers and focus*/
+/*set the hover of the input fields*/
+.masterTooltip:hover{
+	background: #00eeff;
+}
+/*set the hover state of all buttons*/
+#signinButton:hover,#register:hover,#signup:hover, #cancel:hover, #logOut:hover, #dashboard_button:hover, #modal .close:hover, #submit:hover, .deletebtn:hover{
+	border:3px solid #000;
+}
+/*set the focus state of input fields*/
+.masterTooltip:focus{
+	background: #fff;
+}
+/*set the focus state of the cancel and signup buttons*/
+#signup:focus, #cancel:focus, #dashboard_button:focus, #modal .close:focus{
+	background: #ffa466;
+	color: #000;
+	border: 3px solid #fff;
+}  
+/*sets the focus of submit and signout buttons*/
+#signinButton:focus, #register:focus,#logOut:focus, #submit:focus, .deletebtn:focus{
+	background: #00eeff;
+	color: #000;
+	border: 3px solid #fff;
+}
+

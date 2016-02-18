@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Juanita Hales">
+	<meta name="description" content="Prescription Lookup Search results page.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RXLookup-SearchResults</title>
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body id="rxlookup">
+	<!-- container to hold all html -->
+	<div class="container">
+			<!-- header rx lookup logo -->
+			<header id="top"><img src="images/RXLookup.png"></header>
+		<!-- first row navigation	 -->
+		<div class="row">
+			<!-- collapseable menu bar for smaller screens -->
+			<nav class="navbar navbar-default navbar-inverse" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse"> 
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+			<!-- collapseable navs in case additional navigation is required	 -->
+			<div class="collapse navbar-collapse" id="collapse">
+			<!-- mail, login and signup navbar -->
+			<ul class="nav navbar-nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="mailto:rxlookupadmin@rxlookup.com">Contact Us</a></li>
+				<li><a data-toggle="modal" data-target="#loginmodal">Sign In</a></li>
+				<li><a data-toggle="modal" data-target="#signupmodal">Sign Up</a></li>
+			</ul>
+			</nav>
+		<!-- closes row 1 -->
+		</div>
+		<!-- breadcrumbs -->
+		<ol class="breadcrumb">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="searchresults.html">Search Results</a></li>
+		</ol>
+		<!-- searchbox -->
+		<div class="row" id="searchmain">
+			<input class="mastertooltip" data-toggle="tooltip" data-placement="bottom" title="Enter the medication name to begin your search" type="text" name="searchbox" id="searchbox" placeholder="Enter Medication Name">
+			<button id="search" type="button" class="btn btn-default btn-lg">Search</button>
+		</div>
+		<!-- search results -->
+		<div id="searchresults"class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+			<h4>Brand Name:</h4>
+			<h3 id="bname">Synthroid</h3>
+			<h4>Generic Name:</h4>
+			<h3 id="gname">Levothyroxine</h3>
+			<h4>Uses:</h4> 
+			<p id="uses">Synthetic thyroid hormone that is used to treat a condition called hypothyroidism. It is intended to replace a hormone that is normally produced by your thyroid gland. Generally, thyroid replacement therapy is to be taken for life.</p>
+			<h4>Possible Side Effects</h4>
+			<p id="pse">Continued hypothyroidism, Rapid or irregular heartbeat, Chest pain or shortness of breath, Muscle weakness, Nervousness, Irritability, Sleeplesness, Tremors, Change in appetite, Weight Loss, Vommiting, Fredquent bowl movements, Excessive sweating, Heat intolerance, Fever, Impaired fertility, Decreased bone density, Changes in menstrual periods, Other unusual medical events</p>
+			<button id="save" type="button" class="btn btn-default btn-lg">Save</button>
+			<button id="back" type="button" class="btn btn-default btn-lg">Back</button>
+		</div>
+		<!-- links to other related drugs -->
+		<div id="ord"class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+			<h3>Other Related Drugs</h3>
+				<ul>
+					<li><a href="">Levothoid</a></li>
+					<li><a href="">Levoxyl</a></li>
+					<li><a href="">Tirosint</a></li>
+					<li><a href="">Unithroid</a></li>
+					<li><a href="">Cytomel</a></li>
+					<li><a href="">Thyrolar</a></li>
+				</ul>
+		</div>
+		<!-- advertisement div -->
+		<div id="advertisement"class="col-lg-3 col-md-3 col-sm-12 col-xs-12" ><p>Advertisement</p></div>
+		<!-- review medications form -->
+		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+			<form class="review">
+				<h4>Write a Review of this product:</h4>
+					<textarea class="form-control" rows="3"></textarea>
+				<h4> Would you recommend this product to anyone?</h4>
+					<button type="button" class="btn btn-default btn-md" id="star"> Yes <span class="glyphicon glyphicon-star"></span></button>
+					<button type="button" class="btn btn-default btn-md" id="thumbs-down"> No <span class="glyphicon glyphicon-thumbs-down"></span></button></br>
+					<button type="button" class="btn btn-default btn-lg" id="submit">Submit</button>
+			</form>
+		</div>
+
+		<footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<a href="#top" class="mastertooltip" data-toggle="tooltip" data-placement="right" title="Back to Top"><button id="backtotop" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-circle-arrow-up"></span></button></a>
+			<h4>RX Lookup</h4>
+		</footer>
+	<!-- login modal -->
+		<div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  		<div class="modal-dialog">
+	    		<div class="modal-content">
+	      			
+	      			<div class="modal-header">
+	        			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        			<h4 class="modal-title" id="myModalLogin">Login</h4>
+	      			</div>
+	      				
+	      				<div class="modal-body">
+	      						<div class="extralogin">
+	      							<label id="nac">Need an Account?</label>
+									<button id="signuplogin" type="button" class="btn btn-default btn-md" data-dismiss="modal" data-toggle="modal" data-target="#signupmodal">Sign Up</button></br>
+								</div>
+								<form action="">
+									<input class="mastertooltip" data-toggle="tooltip" data-placement="right" title="Enter your Username" type="text" name="username" id="username" placeholder="Username"></br>
+									<input class="mastertooltip" data-toggle="tooltip" data-placement="right" title="Enter your Password" type="password" name="password" id="password" placeholder="Password"></br>
+								</form>
+									<button id="signin" type="button" class="btn btn-default btn-lg">Sign In</button>
+									<button id="close" type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button></br>
+						</div>
+							
+				</div>
+			</div>
+		</div>		
+
+		<!-- sign up modal -->
+		<div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  		<div class="modal-dialog">
+	    		<div class="modal-content">
+	      			
+	      			<div class="modal-header">
+	        			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        			<h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+	      			</div>
+					<div class="modal-body">
+						<div class="extralogin">
+							<label id="hac">Already Have an Account?</label><button id="loginsignup" type="button" class="btn btn-default btn-md" data-dismiss="modal" data-toggle="modal" data-target="#loginmodal">Login</button>
+						</div>	
+						<form action="">
+							<input class="mastertooltip" data-toggle="tooltip" data-placement="right" title="Enter Your First Name" type="text" name="fname" id="fname" placeholder="First Name"></br>
+							<input class="mastertooltip" data-toggle="tooltip" data-placement="right" title="Enter Your Last Name" type="text" name="lname" id="lname" placeholder="Last Name"></br>
+							<input class="mastertooltip" data-toggle="tooltip" data-placement="right" title="Enter Your Email Address" type="email" name="email" id="email" placeholder="Email Address"></br>
+							<input class="mastertooltip" data-toggle="tooltip" data-placement="left" title="I would like to sign up for the newsletter" type="checkbox" name="newsletter" id="newsletter">Sign me up for the newsletter to keep up on the latest medications and helpful hints.</br>
+						</form>
+						<button id="register" type="button" class="btn btn-default btn-lg">Create Account</button>
+						<button id="close" type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+<!-- closes container -->
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+	

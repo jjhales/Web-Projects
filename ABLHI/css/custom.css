@@ -1,0 +1,106 @@
+
+#abl{
+	padding-top: 3%;
+	font-family: 'Philosopher', sans-serif;
+
+}
+#ablhi-navigation{
+	margin-top: 5%;
+	background-color: #55707f;
+}
+#ablhi-navigation, a{
+	color: white;
+}
+#carousel{
+	padding-left: 15%;
+	padding-right: 15%;
+	padding-bottom: 2.5%;
+	padding-top: 2.5%;
+}
+.purp{
+	color: #805578;
+}
+#ablhi-footer{
+	clear: both;
+	background-color: #55707f;
+	padding: 1.5%; 
+}
+#ablhi-footer ul{
+	list-style: none;
+	color: white;
+}
+#schedule{
+	background-color: #9cbbcc;
+	border-radius: 6px;
+	padding: 2.5%;
+	margin-bottom: 0.5%;
+}
+#cu2{
+	margin-left: 15%; 
+	margin-top: 10%;
+	width: 60%;
+	background-color: #fffff6;
+	border-radius: 6px;
+}
+#definitions{
+	padding-top: 1.5%;
+	padding-left: 1.5%;
+	padding-right: 1.5%; 
+	border: solid 1px #DDDDDD;
+}
+
+.map_container{
+	background: url(../images/Brevard_Map2.JPG) no-repeat 0px 0px;
+	height:829px;
+	width:947px;
+	position: relative;
+	color: #fff;
+}
+.map_container a.dot{
+	background: url(../images/dots.png)no-repeat 0px 0px;
+	height: 20px;
+	width: 26px;
+	display: block;
+	cursor: pointer;
+	position: absolute;
+}
+
+.map_container a.dot:hover{
+	background-position: 0px -20px;
+}
+.map_container a.dot.selected{
+	background-position: 0px -40px;
+}
+.map_container .form_location{
+	position: absolute;
+	top: 160px;
+	left: 320px;
+}
+.detail_container{
+	margin-left: 23%;
+}
+
+.place_detail_container{
+	border-radius: 8px;
+	display: none;
+}
+#closemap{
+	margin-top: 15px;
+	margin-right: 15px;
+	float: right;
+}
+
+#gallery_container img{
+	height: 300px;
+	width: 300px;
+	float: left;
+
+}
+#gallery_container img:hover{
+	height: 500px;
+	width: 500px;
+}
+
+/*canvas{
+	border: dotted 1px black;
+}*/

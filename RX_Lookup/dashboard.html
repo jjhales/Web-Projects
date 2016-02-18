@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Juanita Hales">
+	<meta name="description" content="User Prescription Lookup Member Dashboard.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RXLookup-Dashboard</title>
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body id="rxlookup">
+	<!-- container to hold all html -->
+	<div class="container">
+		<!-- header rx lookup logo -->
+		<header id="top"><img src="images/RXLookup.png"></header>
+	<!-- first row navigation	 -->
+	<div class="row">
+		<!-- collapseable menu bar for smaller screens -->
+		<nav class="navbar navbar-default navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse"> 
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		<!-- collapseable navs in case additional navigation is required	 -->
+		<div class="collapse navbar-collapse" id="collapse">
+		<!-- mail, login and signup navbar -->
+		<ul class="nav navbar-nav">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="mailto:rxlookupadmin@rxlookup.com">Contact Us</a></li>
+			<!-- <li><a href="profile.html">Profile</a></li> -->
+			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+				<ul id="tags" class="dropdown-menu" role="menu">
+					<li><a href="#">Thyroid</a></li>
+					<li><a href="#">Hormone replacement</a></li>
+				</ul>
+			<li><a href="index.html">Sign Out</a></li>
+		</ul>
+		</nav>
+	<!-- closes row 1 -->
+	</div>
+	<!-- breadcrumbs -->
+		<ol class="breadcrumb">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="dashboard.html">Dashboard</a></li>
+		</ol>
+
+		<!-- row 2 search box -->
+	<div class="row" id="searchmain">
+			<input class="mastertooltip" data-toggle="tooltip" data-placement="bottom" title="Enter the medication name to begin your search" type="text" name="searchbox" id="searchbox" placeholder="Enter Medication Name">
+			<button id="search" type="button" class="btn btn-default btn-lg">Search</button>
+	<!-- close row 2 -->
+	</div>
+	<!-- nav bar tabs for saved meds, Schedule, Persons -->
+	<div class="row" id="dashboardtabs">
+		<ul id="tabs" class="nav nav-tabs nav-justified">
+			<li class="active"><a href="#tab1">Saved Medications</a></li>
+			<li><a href="#tab2">Schedule</a></li>
+			<li><a href="#tab3">Persons</a></li>
+	</div>
+	<!-- recently added meds, favorites, Saved Medications -->
+	<div id="mytabs" class="row">
+		<div id="tab1">
+			<h4>Recently added<h4>
+			<p>Synthroid     <a href="searchresults.html">details</a>     <button type="button" class="btn btn-default btn-md" id="star">Save as Favorite <span class="glyphicon glyphicon-star"></span></button></p>
+			<h4>Favorites</h4>
+			<p>you have no favorites at this time</p>
+			<h3>Saved Medications</h3>
+			<p>Brand Name: <strong>Synthroid</strong> </br>
+			   Generic Name: <strong>Levothroxine</strong> </br>
+			   Category: <strong>Thryroid</strong></br>
+			   Persons: <strong>Gary</strong> </br>
+			   Frequency: <strong>once a day</strong> </br>
+			   Date to Start: <strong>06/15/2014</strong>
+			   Time: <strong>08:00</strong></br>
+			   Reminder: <strong>No reminder</strong> </br> 
+			   Notes:</br>
+			   <button type="button" class="btn btn-default btn-sm" id="star">Save as Favorite <span class="glyphicon glyphicon-star"></span></button> 
+			<p>
+		</div>
+		<!-- current 5 day todo list -->
+		<div id="tab2">
+			<div id="todolist">
+				<h3>Current To Do List</h3>
+				<p>6/15/2014 08:00 Medication Synthroid Gary</p>
+				<p>6/16/2014 08:00 Medication Synthroid Gary</p>
+				<p>6/17/2014 08:00 Medication Synthroid Gary</p>
+				<p>6/18/2014 08:00 Medication Synthroid Gary</p>
+				<p>6/19/2014 08:00 Medication Synthroid Gary</p>
+				<p>6/19/2014 10:00 Appointment Gary James Jamies</p>
+				<p>6/20/2014 08:00 Medication Synthroid Gary</p>
+				<p>6/21/2014 08:00 Medication Synthroid Gary</p>
+				<p>6/12/2014 08:00 Medication Synthroid Gary</p>
+			</div>
+			<!-- todo list and add form -->
+			<form class="review">
+				<h3>Add To Do</h3>
+				<label>Date:</label><input type="date" id="tododate" class="form-control"></br>
+				<label>Time:</label><input type="time" id="todotime" class="form-control"></br>
+				<label>Type:</label><input type="text" id="todotype" class="form-control"></br>
+				<label>Person to do for:</label>
+				<div class="input-group">
+	      		<div class="input-group-btn">
+					<button id="persons" type="button" class="btn btn-normal dropdown-toggle" data-toggle="dropdown">
+					Persons <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="">Current User</a></li>
+						<li><a href="">Gary</a></li>
+					</ul>
+				</div>
+				<input type="text" placeholder="add a person not in the list" class="form-control">
+				</div>
+				<label>Person to do with:</label>
+				<div class="input-group">
+	      		<div class="input-group-btn">
+					<button id="persons" type="button" class="btn btn-normal dropdown-toggle" data-toggle="dropdown">
+					Persons <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="">Current User</a></li>
+						<li><a href="">Gary</a></li>
+					</ul>
+				</div>
+				<input type="text" placeholder="add a person not in the list" class="form-control">
+				</div>
+				<button type="button" class="btn btn-default btn-lg" id="savetodo">Save</button>
+			</form>
+		</div>
+		<!-- persons list -->
+		<div id="tab3">
+			<div id="personslist">
+				<h3>Persons List</h3>
+					<p><strong>James Jamies</strong></br>
+					123 TheRight Way </br> 
+					American, FL 12345 </br>
+					555-555-555</br>
+					Doctor</p>
+					<p><strong>Gary</strong></br>
+					1234 Freedom Circle </br> 
+					American, FL 12345 </br>
+					555-555-555</br>
+					Patient</p>
+				<ul id="addresslist"></ul>
+			</div>
+			<!-- add a person form -->
+			<form class="review">
+				<h3>Add a Person:</h3></br>
+				<label>First Name:</label>
+					<input type="text"  id="pfname" maxlength="20" class="form-control"></br>
+				<label>Last Name:</label>
+					<input type="text" id="plname" maxlength="20" class="form-control"></br>
+				<label>Address:</label>
+					<input type="text" id="paddress" maxlength="45" class="form-control"></br>
+				<label>City:</label>
+					<input type="text" id="city" maxlength="20" class="form-control"></br>
+				<label>State:</label>
+					<input type="text" id="state" maxlength="2" class="form-control"></br>
+				<label>Zip Code:</label>
+					<input type="text" id="zipcode" maxlength="20" class="form-control"></br>
+				<label>Phone Number:</label>
+					<input type="text" id="phone" maxlength="12" class="form-control"></br>
+				<label>Contact type:</label>
+					<input type="radio" name="contacttype" id="Spouse"> Spouse
+					<input type="radio" name="contacttype" id="Child"> Child
+					<input type="radio" name="contacttype" id="Friend"> Friend
+					<input type="radio" name="contacttype" id="Doctor"> Doctor
+					<input type="radio" name="contacttype" id="Business"> Business
+					<input type="radio" name="contacttype" id="Patient"> Patient</br></br>
+				<label>Notes:</label>
+					<textarea class="form-control" rows="3"></textarea></br>
+				<button type="button" class="btn btn-default btn-lg" id="saveperson">Save</button>
+			</form>
+		</div>
+	</div>	
+
+		<footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<a href="#top" class="mastertooltip" data-toggle="tooltip" data-placement="right" title="Back to Top"><button id="backtotop" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-circle-arrow-up"></span></button></a>
+			<h4>RX Lookup</h4>
+		</footer>
+		
+<!-- closes container -->
+</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+	
