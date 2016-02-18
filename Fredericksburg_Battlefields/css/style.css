@@ -1,0 +1,67 @@
+/*added padding and background image plus positioned the image*/
+header{
+	padding-top: 15%;
+	background-image: url(/images/fredbattle.jpg);
+	background-size: 100%;
+	background-position: 60% 60%;
+}
+/*added color and font style*/
+body{
+	font-family: 'Libre Baskerville', serif;
+	background: #E5D294;
+}
+/*styled font and color*/
+h1, h3 , strong{
+	font-family: 'Alegreya', serif;
+	color: #A23939;
+}
+/*colored the h1 and added a shadow to pop out the text*/
+h1{
+	color:#FCFBF8;
+	text-shadow: 4px 3px 6px rgba(150, 150, 150, 1);
+}
+/*moved over the paragraph*/
+p{
+	margin-left: 2%;
+	margin-right: 2%;
+}
+/*styled the links inside the buttons*/
+a{
+	text-decoration: none;
+	color: #EFECDC;
+}
+/*enlarged text and made text brighter as hovered*/
+a:hover{
+	font-size: 1.03em;
+	color:#FBFBF8; 
+}
+/*made text a little duller and added an underline*/
+a:active{
+	color: #FCFBF8;
+	text-decoration: underline;
+}
+/*added an inset and styled button boxes*/
+.button{
+	display: block;
+	background:#A23939;
+	padding: 3%;
+	margin: 0.09%;
+	width: 95%;
+	height: 95%;
+	border-radius: 8px;
+	-webkit-box-shadow: inset 4px 4px 11px 0px rgba(50, 50, 50, 0.83);
+	-moz-box-shadow:    inset 4px 4px 11px 0px rgba(50, 50, 50, 0.83);
+	box-shadow:         inset 4px 4px 11px 0px rgba(50, 50, 50, 0.83);
+}
+/*moved over the button links*/
+#links{
+	margin-left: 2%;
+	width: 20%;
+	float: left;
+}
+/*nested the results next to the buttons*/
+#battle{
+	width:70%;
+	float:left;
+	margin-left: 5%;
+}

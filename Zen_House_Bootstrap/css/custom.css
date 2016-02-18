@@ -1,0 +1,196 @@
+/*h1 google font centered and background image applied*/
+h1{
+  font:
+  bold 5em 'Ceviche One';
+  text-align: center;
+  letter-spacing: 0.17em;
+  text-shadow: 0.044em 0.044em 0.029em  #000;
+  color: #8FBF6E;
+  background: url("../images/bamboo_black.jpg");
+}
+/*body with the bamboo background*/
+body{
+	background: url("../images/bamboo_green.jpg");
+	padding-top: 70px;
+}
+/*container to wrap around all html elements */
+.container{
+	width: 95%;
+	background: linear-gradient(to bottom, hsla(63,100%,95%,1) 2%,hsla(71,28%,80%,1) 16%,hsla(71,28%,80%,1) 34%,hsla(70,41%,74%,1) 97%);
+	margin: 0 auto;
+	overflow: hidden;
+	padding-left: 0.5%;
+	padding-right: 0.5%;
+	-webkit-box-shadow: 0em 0em 0.033046926635823em #ececec;
+	-moz-box-shadow:    0em 0em 0.033046926635823em #ececec;
+	box-shadow: 0.013218770654329em 0.013218770654329em 0.013218770654329em #000;
+    border-top-right-radius: 0.52875082617317em;
+	border-top-left-radius: 0.52875082617317em;
+	border-bottom-right-radius: 0.52875082617317em;
+	border-bottom-left-radius: 0.52875082617317em;
+
+}
+/*footer portion to provide links to top of page and contact*/
+footer{
+	text-align: center;
+	clear: both;
+	padding-top: 4%;
+	padding-bottom: 5%; 
+}
+/*applies google font for h2, h3*/
+h2,h3{
+	font:
+	normal 1.5em 'Krona One', sans-serif;
+}
+/*styles table and prepares for hover transition*/
+table{
+	background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(233,233,206,1) 100%);
+	border: 0.16em solid #B5B09F;
+	display: inline-block;
+	-webkit-transition: all 1.5s ease 0.5s;
+	-moz-transition: all 1.5s ease 0.5s;
+	-ms-transition: all 1.5s ease 0.5s;
+	-o-transition: all 1.5s ease 0.5s;
+	transition: all 1.5s ease 0.5s;
+}
+/*transition table on hover to larger scale*/
+table:hover{
+	-webkit-transform: scale(1.35);
+	-moz-transform: scale(1.35);
+	-ms-transform: scale(1.35);
+	-o-transform: scale(1.35);
+	transform: scale(1.35);
+	z-index:auto;
+}
+	
+/*sets background color for th */
+th{
+	background: linear-gradient(to bottom, hsla(109,23%,54%,1) 0%,hsla(82,40%,67%,1) 100%);
+}
+/*set background color for every other day to separate the table elements*/
+tr.day{
+	background-color: #F6CD8E;
+}
+/*set color for the table hover*/
+td:hover{
+	background-color: #A4F2BA;
+}
+/*added background for forms titles, with a border and curved shapes*/
+legend{
+	font:
+	normal 1.0em 'Krona One', sans-serif;
+	text-align: center;
+	background-color: #E8AA5F;
+	border: 0.0123456790123457em solid #E8AA5F;
+	border-top-right-radius: 0.23em;
+	border-top-left-radius: 0.23em;
+	border-bottom-right-radius: 0.23em;
+	border-bottom-left-radius: 0.23em;
+}	
+/*changed shape of table to curved edges and added a gradient background with border*/
+fieldset{
+	background: linear-gradient(to bottom, hsla(109,23%,54%,1) 0%,hsla(82,40%,67%,1) 100%); 
+	border: 0.3em solid #E8AA5F;
+	border-top-right-radius: 0.33em;
+	border-top-left-radius: 0.33em;
+	border-bottom-right-radius: 0.33em;
+	border-bottom-left-radius: 0.33em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+/*added position to video container*/
+.video-container { 
+	position: relative; 
+	padding-bottom: 56.25%; 
+	padding-top: 30px; height: 0; overflow: hidden; 
+}
+/*styles elements within the video container*/ 
+.video-container iframe, .video-container object, .video-container embed {
+	 position: absolute; 
+	 top: 0; 
+	 left: 0; 
+	 width: 90%; 
+	 height: 90%; 
+}
+/*style catering to align text and add padding*/
+#catering{
+	text-align: center;
+	padding-top: 8%;
+}
+/*added color and style to menu items h4's*/
+#menuitems h4{
+	font:
+	normal 1em 'Krona One', sans-serif;
+	color: orange;
+	text-shadow: 0.143em 0.143em 0.143em  #000;
+}
+/*padded over the photogallery title*/
+#photo_gallery h3{
+	padding-left: 0.8em;
+}
+/*set colors for input and comment fields hover and focus*/
+input:hover{
+	background-color: #E8AA5F;
+}
+
+input:focus{
+	background-color: #DEE9FF;
+}
+#comments:hover{
+	background-color: #E8AA5F;
+}
+#comments:focus{
+	background-color: #DEE9FF;
+}
+#addcomments:hover{
+	background-color: #E8AA5F;
+}
+#addcomments:focus{
+	background-color: #DEE9FF;
+}
+/*set colors links link, visited, hover and active*/
+
+a:link{
+		color: #467F3F;
+}
+a:visited{
+		color: purple;
+}
+/*styled all a links to become larger on hover*/
+a:hover{
+	color: #17CC00;
+	text-decoration:none;
+	font-size: 2em;
+}
+a:active{
+	color: green;
+	
+}
+
+#drinks{
+	padding-bottom: 20%;
+}
+/*set image drinks to the left and padded around image for positioning*/
+#drinks_img{
+	float: left;
+	padding-right: 2.0em;
+}
+/*added transition setup for images within the gallery*/
+#sushi, #sushi2, #sushi3, #sushi4, #thai_curry, #chocolate_bomb{
+	-webkit-transition: all 1.5s ease 0.5s;
+	-moz-transition: all 1.5s ease 0.5s;
+	-ms-transition: all 1.5s ease 0.5s;
+	-o-transition: all 1.5s ease 0.5s;
+	transition: all 1.5s ease 0.5s;
+}
+/*added transform scale pictures bigger upon hover*/
+#sushi:hover,#sushi2:hover,#sushi3:hover,#sushi4:hover,#thai_curry:hover, #chocolate_bomb:hover{
+	-webkit-transform: scale(1.25);
+	-moz-transform: scale(1.25);
+	-ms-transform: scale(1.25);
+	-o-transform: scale(1.25);
+	transform: scale(1.25);
+}
+
+
+	
