@@ -1,0 +1,1 @@
+<div><h3> Thanks for registering Login with your new username and password.</h3></div>
