@@ -1,0 +1,203 @@
+MGTRacker is an app for recording microgreens crops. Can be used for Microgreens Yields, Seed/Yield ratio, Costs, testing, tracking from seed to growout, tracking seed inventory, sell price, labor. 
+
+databases
+
+Seed db (table created)
+seedNumber = autonumber
+seedName = type of seed planted (if seed name list)
+seedVendor = (if seed vendor list)
+seedManufacturer = (if seed manufacturer list)
+seedAmount = grams of seed in inventory
+seedPrice = amount per gram of seed
+
+Medium db (table created)
+mediumNumber = autonumber
+mediumName = Name
+mediumVendor = purchased from
+mediumManufacturer = made by
+mediumMaterial = type
+mediumAmount = medium amount in grams sheets or units
+mediumSize = grams sheets or units (grams is soil)(soil calculator oz/grams)(sheets are 10 X 20 flat sheets)(units would be peat plugs or rockwool)
+mediumCost = cost per gram sheet or units (if a pack has 10 sheets and costs $15.00 then each sheet is 1.50)
+
+Equipment db (table created)
+equipmentName
+equipmentType
+equipmentVendor
+equipmentManufacturer
+equipmentPrice
+equipmentAmount
+equipmentPurchaseDate
+
+Crops db (table created)
+flatNumber(autonumber from Crops) 
+seedName (from Seed(seedNumber))= seed name
+seedUsed = amount of seed used in grams
+mediumName(from Medium(mediumNumber)) = medium name
+mediumUsed = number of grams or sheets used
+location = location of crop added can be updated if crop is moved in germination
+dateStart = plant date
+dateLight = add to lighting rack date
+dateEnd = havest date
+yieldWeight = amount of crop harvested in grams
+testing = true or false
+cropRating = 1 - 5
+
+Nutrients
+ID, name, manufacturer, vendor, size, price
+Nutrient Use
+ID, name, manufacturer, amount, location, use date, inUse
+
+ later ***-----
+Customers db (table created)
+customerNumber
+customerFName
+customerLName
+customerCompany
+customerPhone
+customerEmail
+customerNews
+username
+userType
+password
+resetCode
+
+shopping cart
+
+Inventory db
+Fresh Sheet -- inventory -- what's available -- what's expected
+Retail (table created)
+product name =
+packagingSize = 
+retailPrice = 
+wholesalePrice =
+currentCost = 
+
+Order db (table not created)
+purchase number =  
+customerNumber(from Customers db) can use generic sales events ie Farmers Market or testing
+purchaseDate
+seedName
+yieldWeight
+soldPrice
+purchaseAmount
+paymentType
+taxCollected
+
+Invoice db (table not created)
+after order is finalized insert into invoice db
+paid or outstanding
+----****
+
+much much later***-----
+1.Labour -- clock in dashboard
+2.To Do's -- dashboard -- farm todo's manager todo's -- value of importance 1-5 -- assign tasks
+3.Projects shoter term long term -- dashboard -- assign projects?
+4.Customer front facing website
+5.Customer Satisfaction Survey
+6.Survey of what people would like to see grown
+7.Customer online ordering
+8.Delivery
+9.seed, medium, equipment manufacturers and vendors contacts - dashboard
+10.Ideas for next season
+ -----***
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Inventories
+*Seed Inventory (v)complete
+query seedName from Seed(total(seedAmount) - Query seedName from Crops total(seedUsed)
+
+*Medium (v)complete
+query mediumName from Medium(total(mediumAmount) - Query mediumName from Crops (total(mediumUsed)
+
+*Plant Inventory(v)complete
+seedName
+Crops yieldWeight - Invoice yieldWeight
+
+Add Farm Materials (v)complete
+*Seed --anytime new seed is purchased 
+	Locations(m = FarmMaterial.php, v = farmMats.php, c = FarmMaterials.php)
+*Medium --anytime new media is purchased 
+	Locations(m = FarmMaterial.php, v = farmMats.php, c = FarmMaterials.php)
+*Equipment --anytime equipment is purchased 
+	Locations(m = FarmMaterial.php, v = farmMats.php, c = FarmMaterials.php)
+
+Add or Update Crops (v)complete
+*CropsAddNew (m = Crop.php v=manageCrops.php c = Crops.php) --anytime a new crop is started
+*Crops Updates (m = Crop.php v=manageCrops.php c = Crops.php) --anytime a crop is moved or harvested
+add materials, add crops, update crops - validation, review, success and fail modals created in templates.
+Nutrients (v)complete
+*add nutrients to manage materials and dashboard (complete)
+*hydro tracking(complete)
+*location, nutrient name, nutrient manufacturer, nutrient size, date used(complete)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dashboard (v)in progress 
+Add farm materials link, add/update crops link, Lifetime Harvest, Farm Material Inventories(v)complete
+
+Computed Variables - in progress
+seasonal tracking -- Lifetime harvest by season -- complete
+cost per flat -10X20 flat- flatNumber (seedName, seedUsed x seedPrice) + mediumCost
+germDays -- total days from dateStart to dateLight
+lightDays -- total days from dateLight to dateEnd 
+totalDays -- germDays + lightDays
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Tasking and ToDo's 
+Crop Planning for the next week
+(will depend on varieties, grow time, sales, yields) 
+Be able to Assign future tasks
+
+Projects
+Long term projects such as building new systems
+Add budgeting --equipment, materials
+Assign 
+
+Sanitation logging
+washing flats
+washing tanks
+
+New Customer or Market 
+*Customer (v)later --when a new customer/user is added
+new, update
+
+Sales
+*Inventory (v)later 
+current harvest
+expected harvest
+less orders
+if no crop list as shortage -
+- if abundance excess/spoilage (spoilage to foodbanks/churches)
+
+*Order (v)later -- when a sale is made or requested
+Sortable for harvest, packing and sorting
+new, update, finalize
+
+*Invoice (v)later --when a sale is finalized
+query last order
+paid or outstanding
+Paypal, Square, COD 
+
+when a sale or order has to be recalled
+query by invoice number
+query by customerName
+query by date 
+
+internal
+-- weekly overview planting and revenue -- on dashboard
+-- seasonal overview planting and revenue -- on dashboard
+query by date range
+query by seedName
+query year to date
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*learn html template email creation
+Newsletter for small customers and Commercial customers
+
+*Newsletter ties into the blog/recipes
+
+*Add images to db??
+
+*Users
+login
+reset password
+create account
