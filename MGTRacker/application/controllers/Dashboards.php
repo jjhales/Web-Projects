@@ -21,7 +21,7 @@ class Dashboards extends CI_Controller{
 		$data['nutrientUsedInventory'] = $this->Dashboard->nutrientUsedInventory();
 		$data['nutrientUnusedInventory'] = $this->Dashboard->unusedNutrient();
 		//load views
-		$this->load->view('templates/header');
+		$this->load->view('templates/header2');
 		$this->load->view('dashBoard', $data);
 		$this->load->view('templates/footer');
 	}

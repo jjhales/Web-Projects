@@ -23,7 +23,7 @@ class FarmMaterials extends CI_Controller{
 		$data['nutrientVendor'] = $this->FarmMaterial->nutrientVendor();
 		$data['nutrientManufacturer'] = $this->FarmMaterial->nutrientManufacturer();
 		//load views
-		$this->load->view('templates/header');
+		$this->load->view('templates/header2');
 		$this->load->view('farmMats', $data);
 		$this->load->view('templates/footer');
 	}
@@ -61,11 +61,11 @@ class FarmMaterials extends CI_Controller{
 				'seedPrice' => $lastPrice
 			);
 			//insert into db
-			$this->load->view('templates/header2');
-			$this->load->view('templates/seedSuccess', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/seedSuccess', $data);
 		}else{
-			$this->load->view('templates/header2');
-			$this->load->view('templates/error');
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
 		}
 	}
 	public function validateSeed(){
@@ -78,8 +78,8 @@ class FarmMaterials extends CI_Controller{
 			);
 			//insert into db
 			$query = $this->db->insert('seed', $data);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/addSuccess');
+			$this->load->view('templates/header3');
+			$this->load->view('success/addSuccess');
 	}
 	//add medium form validation and db insert
 	public function addMedium(){	
@@ -109,11 +109,11 @@ class FarmMaterials extends CI_Controller{
 				'mediumSize' => $MS,
 				'mediumCost' => $mediumCost
 			);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/mediumSuccess', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/mediumSuccess', $data);
 		}else{
-			$this->load->view('templates/header2');
-			$this->load->view('templates/error');
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
 		}
 	}
 	public function validateMedium(){
@@ -127,8 +127,8 @@ class FarmMaterials extends CI_Controller{
 				'mediumCost' => $this->input->post('mediumCost')
 			);
 			$query = $this->db->insert('medium', $data);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/addSuccess');
+			$this->load->view('templates/header3');
+			$this->load->view('success/addSuccess');
 
 	}
 	//add equipment form validation and db insert
@@ -152,11 +152,11 @@ class FarmMaterials extends CI_Controller{
 
 			);
 			//db insert
-			$this->load->view('templates/header2');
-			$this->load->view('templates/equipmentSuccess', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/equipmentSuccess', $data);
 		}else{
-			$this->load->view('templates/header2');
-			$this->load->view('templates/error');
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
 		}
 	}
 	public function validateEquipment(){
@@ -172,8 +172,8 @@ class FarmMaterials extends CI_Controller{
 			);
 			//db insert
 			$query = $this->db->insert('equipment', $data);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/addSuccess');
+			$this->load->view('templates/header3');
+			$this->load->view('success/addSuccess');
 
 	}
 	public function addNutrients(){	
@@ -200,11 +200,11 @@ class FarmMaterials extends CI_Controller{
 				'nutrientSize' => $nutrientCon,
 				'nutrientPrice' => $nutrientCost
 			);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/nutrientsSuccess', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/nutrientsSuccess', $data);
 		}else{
-			$this->load->view('templates/header2');
-			$this->load->view('templates/error');
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
 		}
 	}
 	public function validateNutrient(){
@@ -216,8 +216,8 @@ class FarmMaterials extends CI_Controller{
 				'nutrientPrice' => $this->input->post('nutrientPrice')
 			);
 			$query = $this->db->insert('nutrients', $data);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/addSuccess');
+			$this->load->view('templates/header3');
+			$this->load->view('success/addSuccess');
 
 	}
 

@@ -5,7 +5,7 @@
 				
 				<body onload="sie()">
 
-					<button type="button" id="signin_fail" class="btn btn-link" data-toggle="modal" data-target="#signin_errors" style="color:white">sie</button>
+					<button type="button" id="signin_fail" class="btn btn-link" data-toggle="modal" data-target="#signin_errors" style="color:white"></button>
 					
 					<div class="modal fade" id="signin_errors">
 						<div class="modal-dialog">

@@ -8,10 +8,10 @@ $this->load->helper('form');
 //nutrients
 	echo '<h3>Nutrients</h3>';
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showNutrientsUse" data-toggle="collapse" href="#nutrientsUse" role="button" aria-expanded="false" aria-controls="nutrientsUse"style="margin-bottom:0.5%;">Use Nutrients</button>';
-	echo '<div id="nutrientsUse" class="col collapse">';
+	echo '<div id="nutrientsUse" class="col collapse card">';
  	echo validation_errors();
-	echo form_open('Nutrients/useNutrients', 'class="form-control"');
-	echo '<div>'; 
+	echo form_open('Nutrients/useNutrients');
+	echo '<div class="card-body">'; 
 	//nutrient name
 	echo '<div class="form-row"><div class="col">';
 	echo form_label("Nutrient Name ", "nutrientName");

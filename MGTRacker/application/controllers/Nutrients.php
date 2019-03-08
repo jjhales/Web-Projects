@@ -15,7 +15,7 @@ class Nutrients extends CI_Controller{
 		//$data['activeNutrients'] = $this->Crop->activeNutrients();
 		$data['nutrientsLocation'] = $this->Crop->nutrientsLocation();
 		//load views
-		$this->load->view('templates/header');
+		$this->load->view('templates/header2');
 		$this->load->view('nutrientUse', $data);
 		$this->load->view('templates/footer');
 	}
@@ -45,11 +45,11 @@ class Nutrients extends CI_Controller{
 				'nutrientUseDate' =>$this->input->post('nutrientUseDate'),
 				'inUse' =>('1')
 			);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/nutrientUseSuccess', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/nutrientUseSuccess', $data);
 		}else{
-			$this->load->view('templates/header2');
-			$this->load->view('templates/error');
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
 		}
 	}
 	public function validateNutrientUse(){
@@ -77,8 +77,8 @@ class Nutrients extends CI_Controller{
 
 		//insert new value into the db
 			$query = $this->db->insert('nutrientUse', $data);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/addSuccess');
+			$this->load->view('templates/header3');
+			$this->load->view('success/addSuccess');
 
 	}
 	public function nutrientUseDeactivate(){
@@ -91,8 +91,8 @@ class Nutrients extends CI_Controller{
 		//remove a nutrient from active list
 		$this->db->where($data);
 		$this->db->update('nutrientUse', $notinUse);
-		$this->load->view('templates/header2');
-		$this->load->view('templates/addSuccess');
+		$this->load->view('templates/header3');
+		$this->load->view('success/addSuccess');
 
 	}
 			

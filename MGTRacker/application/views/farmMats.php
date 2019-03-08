@@ -8,10 +8,10 @@ echo '<h3>Manage Materials</h3>';
 //seed input : anytime seed is purchased
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showSeed" data-toggle="collapse" href="#seedMaterial" role="button" aria-expanded="false" aria-controls="seedMaterial"style="margin-bottom:0.5%;">Add Seed</button>';
 $this->load->helper('form');
-	echo '<div id="seedMaterial" class="col collapse">';
+	echo '<div id="seedMaterial" class="col collapse card">';
  	echo validation_errors();
-	echo form_open('FarmMaterials/addSeed', 'class="form-control"');
-	echo '<div>'; 
+	echo form_open('FarmMaterials/addSeed');
+	echo '<div class="card-body">'; 
 	//seed name
 	echo '<div class="form-row"><div class="col">';
 	echo form_label("Seed Name ", "seedName");
@@ -77,10 +77,10 @@ $this->load->helper('form');
 
 //medium input: anytime medium is purchased
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showMedia" data-toggle="collapse" href="#mediumMaterial" role="button" aria-expanded="false" aria-controls="mediumMaterial" style="margin-bottom:0.5%;">Add Medium</button>';
-	echo '<div id="mediumMaterial" class="col collapse">';
+	echo '<div id="mediumMaterial" class="col collapse card">';
 	echo validation_errors();
-	echo form_open('FarmMaterials/addMedium' , 'class="form-control"'); 
-	echo '<div>';
+	echo form_open('FarmMaterials/addMedium'); 
+	echo '<div class="card-body">';
 	//medium name
 	echo '<div class="form-row"><div class="col">';
 	echo form_label("Medium Name ", "mediumName");
@@ -165,10 +165,10 @@ $this->load->helper('form');
 
 //equipment input: anytime equipment is purchased
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showEquipment" data-toggle="collapse" href="#equipment" role="button" aria-expanded="false" aria-controls="equipment"style="margin-bottom:0.5%;">Add Equipment</button>';
-	echo '<div id="equipment" class="col collapse">';
+	echo '<div id="equipment" class="col collapse card">';
 	echo validation_errors();
-	echo form_open('FarmMaterials/addequipment' , 'class="form-control"'); 
-	echo '<div>';
+	echo form_open('FarmMaterials/addequipment'); 
+	echo '<div class="card-body">';
 	//equipment name
 	echo '<div class="form-row"><div class="col">';
 	echo form_label("Equipment Name ", "equipmentName");
@@ -252,10 +252,10 @@ $this->load->helper('form');
 	echo '</div>';
 //nutrients
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showNutrients" data-toggle="collapse" href="#nutrients" role="button" aria-expanded="false" aria-controls="nutrients"style="margin-bottom:0.5%;">Add Nutrients</button>';
-	echo '<div id="nutrients" class="col collapse">';
+	echo '<div id="nutrients" class="col collapse card">';
  	echo validation_errors();
-	echo form_open('FarmMaterials/addNutrients', 'class="form-control"');
-	echo '<div>'; 
+	echo form_open('FarmMaterials/addNutrients');
+	echo '<div class="card-body">'; 
 	//nutrient name
 	echo '<div class="form-row"><div class="col">';
 	echo form_label("Nutrient Name ", "nutrientName");

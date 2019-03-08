@@ -22,7 +22,7 @@ class Crops extends CI_Controller{
 		$data['growCount'] = $this->Crop->crops_pull_grow_count();
 		$data['location'] = $this->Crop->location();
 		//load views
-		$this->load->view('templates/header');
+		$this->load->view('templates/header2');
 		$this->load->view('manageCrops', $data);
 		$this->load->view('templates/footer');
 	}
@@ -77,11 +77,11 @@ class Crops extends CI_Controller{
 				'location' => $this->input->post('location')
 			);
 			//load view for validation
-			$this->load->view('templates/header2');
+			$this->load->view('templates/header3');
 			$this->load->view('templates/validate_crop', $data);
 		}else{
-			$this->load->view('templates/header2');
-			$this->load->view('templates/error');
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
 			
 		}
 	}
@@ -99,8 +99,8 @@ class Crops extends CI_Controller{
 				'location' => $this->input->post('location')
 			);
 			$query = $this->db->insert('crops', $data);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/addSuccess');
+			$this->load->view('templates/header3');
+			$this->load->view('success/addSuccess');
 	}
 	public function updateGerm(){
 		$this->load->model('Crop');
@@ -116,11 +116,11 @@ class Crops extends CI_Controller{
 				'location' =>$this->input->post('location')
 				);
 			
-			$this->load->view('templates/header2');
-			$this->load->view('templates/germSuccess', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/germSuccess', $data);
 		}else{
-			$this->load->view('templates/header2');
-			$this->load->view('templates/error');
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
 		}
 
 	}
@@ -133,8 +133,8 @@ class Crops extends CI_Controller{
 			);
 		
 		$this->Crop->updateLight($data1, $data);
-		$this->load->view('templates/header2');
-		$this->load->view('templates/addSuccess');
+		$this->load->view('templates/header3');
+		$this->load->view('success/addSuccess');
 	}
 	//update grow
 		public function updateGrow(){
@@ -161,11 +161,11 @@ class Crops extends CI_Controller{
 				'yieldWeight' => $conAmount,
 				'cropRating' => $this->input->post('cropRating')
 				);
-			$this->load->view('templates/header2');
-			$this->load->view('templates/updateSuccess', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/updateSuccess', $data);
 		}else{
-			$this->load->view('templates/header2');
-			$this->load->view('templates/error');
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
 		}
 
 	}
@@ -179,8 +179,8 @@ class Crops extends CI_Controller{
 				);
 		
 		$this->Crop->updateEnd($data1, $data);
-		$this->load->view('templates/header2');
-		$this->load->view('templates/addSuccess');
+		$this->load->view('templates/header3');
+		$this->load->view('success/addSuccess');
 	}
 	
 }

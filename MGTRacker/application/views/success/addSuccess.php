@@ -2,7 +2,7 @@
 	function cg(){
 		document.getElementById('pop_success').click();
 		document.getElementById('pop_success').style.display='none';
-}
+	}
 </script>
 <body onload="cg()">
 

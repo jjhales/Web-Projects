@@ -54,7 +54,7 @@ foreach ($harvestInventory as $value) {
 	echo $value->cropRating;
 	echo '</td>';
 	echo '<td>';
-	echo '<button class="btn btn-sm" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Germ Date: ';
 	echo $value->dateLight;
 	echo '</div>';
@@ -119,7 +119,7 @@ foreach ($avgHarvestInventory as $value) {
 	echo $value->avgCropRating;
 	echo '</td>';
 	echo '<td>';
-	echo '<button class="btn btn-sm" id="showAvgHarvestDetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<button class="btn btn-sm btn-link" id="showAvgHarvestDetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Medium Manufacturer: ';
 	echo $value->mediumManufacturer;
 	echo '</div>';
@@ -185,7 +185,7 @@ foreach ($harvestInventory as $value) {
 	echo $value->cropRating;
 	echo '</td>';
 	echo '<td>';
-	echo '<button class="btn btn-sm" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Germ Date: ';
 	echo $value->dateLight;
 	echo '</div>';
@@ -257,7 +257,7 @@ foreach ($harvestInventory as $value) {
 	echo $value->cropRating;
 	echo '</td>';
 	echo '<td>';
-	echo '<button class="btn btn-sm" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Germ Date: ';
 	echo $value->dateLight;
 	echo '</div>';
@@ -329,7 +329,7 @@ foreach ($harvestInventory as $value) {
 	echo $value->cropRating;
 	echo '</td>';
 	echo '<td>';
-	echo '<button class="btn btn-sm" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Germ Date: ';
 	echo $value->dateLight;
 	echo '</div>';
@@ -401,7 +401,7 @@ foreach ($harvestInventory as $value) {
 	echo $value->cropRating;
 	echo '</td>';
 	echo '<td>';
-	echo '<button class="btn btn-sm" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Germ Date: ';
 	echo $value->dateLight;
 	echo '</div>';
