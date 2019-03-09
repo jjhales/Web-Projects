@@ -2,59 +2,87 @@
 class FarmMaterial extends CI_Model{
 	
 	public function seedList(){
-		$query = $this->db->query("SELECT seed.seedName FROM seed GROUP BY seedName ORDER BY seedName asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT seed.seedName FROM seed WHERE seed.company = ? GROUP BY seedName ORDER BY seedName asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function seedVendor(){
-		$query = $this->db->query("SELECT seed.seedVendor FROM seed GROUP BY seedVendor ORDER BY seedVendor asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT seed.seedVendor FROM seed WHERE seed.company = ? GROUP BY seedVendor ORDER BY seedVendor asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function seedManufacturer(){
-		$query = $this->db->query("SELECT seed.seedManufacturer FROM seed GROUP BY seedManufacturer ORDER BY seedManufacturer asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT seed.seedManufacturer FROM seed WHERE seed.company = ? GROUP BY seedManufacturer ORDER BY seedManufacturer asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function mediumName(){
-		$query = $this->db->query("SELECT medium.mediumName FROM medium GROUP BY mediumName ORDER BY mediumName asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT medium.mediumName FROM medium WHERE medium.company = ? GROUP BY mediumName ORDER BY mediumName asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function mediumVendor(){
-		$query = $this->db->query("SELECT medium.mediumVendor FROM medium GROUP BY mediumVendor ORDER BY mediumVendor asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT medium.mediumVendor FROM medium WHERE medium.company = ? GROUP BY mediumVendor ORDER BY mediumVendor asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function mediumManufacturer(){
-		$query = $this->db->query("SELECT medium.mediumManufacturer FROM medium GROUP BY mediumManufacturer ORDER BY mediumManufacturer asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT medium.mediumManufacturer FROM medium WHERE medium.company = ? GROUP BY mediumManufacturer ORDER BY mediumManufacturer asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function mediumMaterial(){
-		$query = $this->db->query("SELECT medium.mediumMaterial FROM medium GROUP BY mediumMaterial ORDER BY mediumMaterial asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT medium.mediumMaterial FROM medium WHERE medium.company = ? GROUP BY mediumMaterial ORDER BY mediumMaterial asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function equipmentName(){
-		$query = $this->db->query("SELECT equipment.equipmentName FROM equipment GROUP BY equipmentName ORDER BY equipmentName asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT equipment.equipmentName FROM equipment WHERE equipment.company = ? GROUP BY equipmentName ORDER BY equipmentName asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function equipmentType(){
-		$query = $this->db->query("SELECT equipment.equipmentType FROM equipment GROUP BY equipmentType ORDER BY equipmentType asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT equipment.equipmentType FROM equipment WHERE equipment.company = ? GROUP BY equipmentType ORDER BY equipmentType asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function equipmentVendor(){
-		$query = $this->db->query("SELECT equipment.equipmentVendor FROM equipment GROUP BY equipmentVendor ORDER BY equipmentVendor asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT equipment.equipmentVendor FROM equipment WHERE equipment.company = ? GROUP BY equipmentVendor ORDER BY equipmentVendor asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function equipmentManufacturer(){
-		$query = $this->db->query("SELECT equipment.equipmentManufacturer FROM equipment GROUP BY equipmentManufacturer ORDER BY equipmentManufacturer asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT equipment.equipmentManufacturer FROM equipment WHERE equipment.company = ? GROUP BY equipmentManufacturer ORDER BY equipmentManufacturer asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function nutrientName(){
-		$query = $this->db->query("SELECT nutrients.nutrientName FROM nutrients GROUP BY nutrientName ORDER BY nutrientName asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT nutrients.nutrientName FROM nutrients WHERE nutrients.company = ? GROUP BY nutrientName ORDER BY nutrientName asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function nutrientVendor(){
-		$query = $this->db->query("SELECT nutrients.nutrientVendor FROM nutrients GROUP BY nutrientVendor ORDER BY nutrientVendor asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT nutrients.nutrientVendor FROM nutrients WHERE nutrients.company = ? GROUP BY nutrientVendor ORDER BY nutrientVendor asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function nutrientManufacturer(){
-		$query = $this->db->query("SELECT nutrients.nutrientManufacturer FROM nutrients GROUP BY nutrientManufacturer ORDER BY nutrientManufacturer asc");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT nutrients.nutrientManufacturer FROM nutrients WHERE nutrients.company = ? GROUP BY nutrientManufacturer ORDER BY nutrientManufacturer asc";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 

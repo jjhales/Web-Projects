@@ -54,7 +54,7 @@
 							echo '<input type="decimal" class="form-control form-control-plaintext" name="seedPrice" value="';
 							echo $seedPrice;
 							echo '"readonly"></div></div>';
-							echo '<div style="margin-left:50%; margin-bottom:2%;">';
+							echo '<div style="margin-bottom:2%;">';
 	     					echo form_submit("updateSeed", "Add Seed" , "class='submit btn btn-primary'");
 	     					?>
 	     					<a href='<?php echo "../FarmMaterials"?>' class="btn btn-primary">Back to Materials</a>

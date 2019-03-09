@@ -43,7 +43,8 @@ class Nutrients extends CI_Controller{
 				'nutrientAmount' => $nutrientCon,
 				'location' => $this->input->post('location'),
 				'nutrientUseDate' =>$this->input->post('nutrientUseDate'),
-				'inUse' =>('1')
+				'inUse' =>('1'),
+
 			);
 			$this->load->view('templates/header3');
 			$this->load->view('success/nutrientUseSuccess', $data);
@@ -72,7 +73,9 @@ class Nutrients extends CI_Controller{
 				'nutrientAmount' => $this->input->post('nutrientAmount'),
 				'location' => $this->input->post('location'),
 				'nutrientUseDate' =>$this->input->post('nutrientUseDate'),
-				'inUse' =>('1')
+				'inUse' =>('1'),
+				'username' => $this->session->userdata('username'),
+				'company' => $this->session->userdata('company')
 			);
 
 		//insert new value into the db

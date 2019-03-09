@@ -74,7 +74,9 @@ class FarmMaterials extends CI_Controller{
 				'seedVendor' => $this->input->post('seedVendor'),
 				'seedManufacturer' => $this->input->post('seedManufacturer'),
 				'seedAmount' => $this->input->post('seedAmount'),
-				'seedPrice' => $this->input->post('seedPrice')
+				'seedPrice' => $this->input->post('seedPrice'),
+				'username' => $this->session->userdata('username'),
+				'company' => $this->session->userdata('company')
 			);
 			//insert into db
 			$query = $this->db->insert('seed', $data);
@@ -124,7 +126,9 @@ class FarmMaterials extends CI_Controller{
 				'mediumMaterial' => $this->input->post('mediumMaterial'),
 				'mediumAmount' => $this->input->post('mediumAmount'),
 				'mediumSize' => $this->input->post('mediumSize'),
-				'mediumCost' => $this->input->post('mediumCost')
+				'mediumCost' => $this->input->post('mediumCost'),
+				'username' => $this->session->userdata('username'),
+				'company' => $this->session->userdata('company')
 			);
 			$query = $this->db->insert('medium', $data);
 			$this->load->view('templates/header3');
@@ -167,7 +171,9 @@ class FarmMaterials extends CI_Controller{
 				'equipmentManufacturer' => $this->input->post('equipmentManufacturer'),
 				'equipmentPrice' => $this->input->post('equipmentPrice'),
 				'equipmentAmount' => $this->input->post('equipmentAmount'),
-				'equipmentPurchaseDate' => $this->input->post('equipmentPurchaseDate')
+				'equipmentPurchaseDate' => $this->input->post('equipmentPurchaseDate'),
+				'username' => $this->session->userdata('username'),
+				'company' => $this->session->userdata('company')
 
 			);
 			//db insert
@@ -213,7 +219,9 @@ class FarmMaterials extends CI_Controller{
 				'nutrientVendor' => $this->input->post('nutrientVendor'),
 				'nutrientManufacturer' => $this->input->post('nutrientManufacturer'),
 				'nutrientSize' => $this->input->post('nutrientSize'),
-				'nutrientPrice' => $this->input->post('nutrientPrice')
+				'nutrientPrice' => $this->input->post('nutrientPrice'),
+				'username' => $this->session->userdata('username'),
+				'company' => $this->session->userdata('company')
 			);
 			$query = $this->db->insert('nutrients', $data);
 			$this->load->view('templates/header3');

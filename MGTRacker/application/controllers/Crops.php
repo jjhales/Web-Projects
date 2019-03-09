@@ -96,7 +96,10 @@ class Crops extends CI_Controller{
 				'mediumMaterial' => $this->input->post('mediumMaterial'),
 				'dateStart' => $this->input->post('dateStart'),
 				'testing' => $this->input->post('testing'),
-				'location' => $this->input->post('location')
+				'location' => $this->input->post('location'),
+				'username' => $this->session->userdata('username'),
+				'company' => $this->session->userdata('company')
+
 			);
 			$query = $this->db->insert('crops', $data);
 			$this->load->view('templates/header3');

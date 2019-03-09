@@ -65,21 +65,24 @@ class MGTracker extends CI_Controller{
 		if($this->form_validation->run()){
 			//query db for password attached to username
 			$user = $this->input->post('username');
-			$sql = 'SELECT password FROM customers WHERE username = ?';
+			$sql = 'SELECT customerCompany, password FROM customers WHERE username = ?';
 			$query = $this->db->query($sql, $user);
 			$result = $query->result();
-			//convert array for password to string
+			//convert array for password and company to string
 			foreach ($result as $row) {
 				//password in db
 				$dbpass = $row->password;
 				//password entered by a valid user
 				$userPass = $this->input->post('password');
+				//company in db
+				$company = $row->customerCompany;
 				//compare password entered and database value
 				if(password_verify($userPass, $dbpass)){ 
 					$data = array(
-					'username' => $this->input->post('username'),
+					'username' => ($user),
+					'company' => ($company),
 					'is_logged_in' => 1);
-					//set session data with username
+					//set session data with username and company
 					$this->session->set_userdata($data);
 					//load dashboard
 					redirect ('Dashboards');

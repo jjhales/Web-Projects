@@ -1,7 +1,9 @@
 <?php
 class Crop extends CI_Model{
 	public function crops_pull_germ(){
-		$query = $this->db->query("SELECT * from crops WHERE crops.dateLight IS NULL");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT * from crops WHERE crops.dateLight IS NULL and crops.company = ?";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function updateLight($data1, $data){
@@ -9,7 +11,9 @@ class Crop extends CI_Model{
 		$this->db->update('crops', $data);
 	}
 	public function crops_pull_grow(){
-		$query = $this->db->query("SELECT * from crops WHERE crops.dateLight IS NOT NULL and crops.dateEnd IS NULL");	
+		$data = $this->session->userdata('company');
+		$sql = "SELECT * from crops WHERE crops.dateLight IS NOT NULL and crops.dateEnd IS NULL and crops.company = ?";
+		$query = $this->db->query($sql, $data);	
 		return $query->result();
 	}
 	public function updateEnd($data1, $data){
@@ -17,23 +21,33 @@ class Crop extends CI_Model{
 		$this->db->update('crops', $data);
 	}
 	public function crops_pull_harvest(){
-		$query = $this->db->query("SELECT * from crops WHERE crops.dateLight IS NOT NULL and crops.dateEnd IS NOT NULL");
+		$data = $this->session->userdata('company');
+		$sql = "SELECT * from crops WHERE crops.dateLight IS NOT NULL and crops.dateEnd IS NOT NULL and crops.company = ?";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function crops_pull_germ_count(){
-		$query = $this->db->query("SELECT COUNT(crops.flatNumber) AS germCrops from crops WHERE crops.dateLight IS NULL");
+		$data = $this->session->userdata('company');
+		$sql ="SELECT COUNT(crops.flatNumber) AS germCrops from crops WHERE crops.dateLight IS NULL and crops.company = ?";
+		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
 	public function crops_pull_grow_count(){
-		$query = $this->db->query("SELECT *, COUNT(crops.flatNumber) AS growCrops from crops WHERE crops.dateLight IS NOT NULL and crops.dateEnd IS NULL");	
+		$data = $this->session->userdata('company');
+		$sql = "SELECT *, COUNT(crops.flatNumber) AS growCrops from crops WHERE crops.dateLight IS NOT NULL and crops.dateEnd IS NULL and crops.company = ?";	
+		$query = $this->db->query($sql, $data);
 		return $query->result();
 	}
 	public function location(){
-		$query = $this->db->query('SELECT crops.location from crops GROUP BY crops.location');
+		$data = $this->session->userdata('company');
+		$sql = "SELECT crops.location from crops WHERE crops.company = ? GROUP BY crops.location";
+		$query = $this->db->query($sql, $data);
 		return $query->result();
 	}
 	public function nutrientsLocation(){
-		$query = $this->db->query('SELECT nutrientuse.location from nutrientuse GROUP BY nutrientuse.location');
+		$data = $this->session->userdata('company');
+		$sql = "SELECT nutrientuse.location from nutrientuse WHERE nutrientuse.company = ? GROUP BY nutrientuse.location";
+		$query = $this->db->query($sql, $data);
 		return $query->result();
 	}
 

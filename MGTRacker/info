@@ -48,7 +48,7 @@ ID, name, manufacturer, vendor, size, price
 Nutrient Use
 ID, name, manufacturer, amount, location, use date, inUse
 
- later ***-----
+ 
 Customers db (table created)
 customerNumber
 customerFName
@@ -61,6 +61,9 @@ username
 userType
 password
 resetCode
+
+later ***----
+Plant starts purchased(this will include clones or maybe a clone portion will be added) --bought plants will be added in farm materials, added to grow in manage crops -- (no germination time) inventoried under plant reported on dashboard
 
 shopping cart
 
@@ -110,7 +113,7 @@ query seedName from Seed(total(seedAmount) - Query seedName from Crops total(see
 *Medium (v)complete
 query mediumName from Medium(total(mediumAmount) - Query mediumName from Crops (total(mediumUsed)
 
-*Plant Inventory(v)complete
+*Seed Inventory(v)complete
 seedName
 Crops yieldWeight - Invoice yieldWeight
 
@@ -121,6 +124,11 @@ Add Farm Materials (v)complete
 	Locations(m = FarmMaterial.php, v = farmMats.php, c = FarmMaterials.php)
 *Equipment --anytime equipment is purchased 
 	Locations(m = FarmMaterial.php, v = farmMats.php, c = FarmMaterials.php)
+
+Nutrients (v)complete
+add nutrients
+use nutrients
+nutrient inventory
 
 Add or Update Crops (v)complete
 *CropsAddNew (m = Crop.php v=manageCrops.php c = Crops.php) --anytime a new crop is started
@@ -142,24 +150,17 @@ lightDays -- total days from dateLight to dateEnd
 totalDays -- germDays + lightDays
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Tasking and ToDo's 
-Crop Planning for the next week
-(will depend on varieties, grow time, sales, yields) 
-Be able to Assign future tasks
-
-Projects
-Long term projects such as building new systems
-Add budgeting --equipment, materials
-Assign 
-
-Sanitation logging
-washing flats
-washing tanks
-
 New Customer or Market 
-*Customer (v)later --when a new customer/user is added
+*Customer (v)complete --when a new customer/user is added
 new, update
 
+
+*Users (v)complete
+login
+reset password
+create account
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Sales
 *Inventory (v)later 
 current harvest
@@ -181,13 +182,28 @@ when a sale or order has to be recalled
 query by invoice number
 query by customerName
 query by date 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 internal
 -- weekly overview planting and revenue -- on dashboard
 -- seasonal overview planting and revenue -- on dashboard
 query by date range
 query by seedName
 query year to date
+
+Tasking and ToDo's 
+Crop Planning for the next week
+(will depend on varieties, grow time, sales, yields) 
+Be able to Assign future tasks
+
+Projects
+Long term projects such as building new systems
+Add budgeting --equipment, materials
+Assign 
+
+Sanitation logging
+washing flats
+washing tanks
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *learn html template email creation
@@ -196,8 +212,3 @@ Newsletter for small customers and Commercial customers
 *Newsletter ties into the blog/recipes
 
 *Add images to db??
-
-*Users
-login
-reset password
-create account

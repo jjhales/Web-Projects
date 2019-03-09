@@ -1,6 +1,15 @@
-<a href='<?php echo "./MGTracker/logout"?>' class="btn btn-primary">Log Out</a>
+<a href='<?php echo "./MGTracker/logout"?>' class="btn btn-primary btn-sm" style="float:right;">Log Out</a>
+<p>Welcome Back
+	<?php
+		$username = $this->session->userdata('username');
+		$company = $this->session->userdata('company');
+		echo $username;
+		echo '!</p>';
+		echo '<h3>';
+		echo $company;
+		echo ' Dashboard</h3>';
 
-<h3>Dashboard</h3>
+	?>
 <div>
 	<h4>Manage</h4>
 	<a href='<?php echo "FarmMaterials"?>' class="btn btn-primary">Add Farm Materials</a>
