@@ -1,3 +1,5 @@
+<a href='<?php echo "./MGTracker/logout"?>' class="btn btn-primary">Log Out</a>
+
 <h3>Dashboard</h3>
 <div>
 	<h4>Manage</h4>

@@ -1,4 +1,4 @@
-				<script type="text/javascript">
+<script type="text/javascript">
 					function sie(){document.getElementById('signin_fail').click();}
 					function goBack(){window.history.back()}
 				</script>
@@ -17,14 +17,15 @@
 		      					<!-- signin error body -->
 			     					<div class="modal-body" id="sign_in_error_msg">
 										<?php
-											echo "<h4> We're sorrywe could not reset your password due to the following errors:</h4>";
+											echo "<h4> We're sorry you could not be logged in due to the following errors:</h4>";
 											echo "<p>";
-											echo validation_errors();
+											echo "Your password has been entered incorrectly";
 											echo "</p>";
 										?>
 									</div>
 	     						<div class="modal-footer">
 	     							<button type="button" class="btn btn-primary" value="Back" onclick="goBack()">Try Again</button>
+	     							<a href='<?php echo "forgot_password"?>' class="btn btn-primary">Reset Password</a>
 								</div> <!-- close modal footer -->
 							</div><!-- /.modal-content -->
 						</div><!-- /.modal-dialog -->

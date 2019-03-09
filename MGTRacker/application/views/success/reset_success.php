@@ -18,7 +18,7 @@
 	     						<p> Login with your new password!</p>
 	     					</div>
 	     					<div class="modal-footer">
-							<button type="button" class="btn btn-default"><a href ="MGTracker">Close</a></button>		
+							<button type="button" class="btn btn-default"><a href ="../../">Close</a></button>		
 							</div> <!-- close modal footer -->
 					</div><!-- /.modal-content -->
 				</div><!-- /.modal-dialog -->

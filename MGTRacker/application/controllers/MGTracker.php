@@ -14,74 +14,99 @@ class MGTracker extends CI_Controller{
 		//sets rules for form validation of info for new user form
 		$this->form_validation->set_rules('fname', 'First Name', 'required');
 		$this->form_validation->set_rules('lname', 'Last Name', 'required');
+		//check db for unique email address
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[customers.CustomerEmail]');
+		//check db for unique username
 		$this->form_validation->set_rules('username', 'Username', 'trim|is_unique[customers.username]');
-		$this->form_validation->set_rules('password', 'Password', 'trim|matches[passwordConf]');
-		$this->form_validation->set_rules('passwordConf', 'Password Confirmation', 'trim');
+		$this->form_validation->set_rules('password', 'Password', 'trim');
+		//match password
+		$this->form_validation->set_rules('passwordConf', 'Password Confirmation', 'trim|matches[password]');
 		$this->form_validation->set_rules('agree', 'Agree Terms', 'required');
-		
-		if($this->form_validation->run())
-			{
-				// inserts user data into db and loads login page 
-				$data = array(
-					"customerFName" => $this->input->post('fname'),
-					"customerLName" => $this->input->post('lname'),
-					"customerCompany" => $this->input->post('company'),
-					"customerPhone" => $this->input->post('phone'),
-					"CustomerEmail" => $this->input->post('email'),
-					"customerNews" => $this->input->post('news'),
-					"username" => $this->input->post('username'),
-					"usertype" => ('customer'),
-					"password" => $this->input->post('password'),
-					"resetCode" => ('0')
-				);
-
-				$query = $this->db->insert('customers', $data);
-				$this->load->view('templates/header3');
-				$this->load->view('success/signupSuccess');
-				$this->load->view('templates/footer');
-
-			}else{
-				$this->load->view('templates/header3');
-				$this->load->view('errors/signup_error');
-				$this->load->view('templates/footer');
-
-
-			}
-
+		//if validation is good
+		if($this->form_validation->run()){
+			//set password to a variable
+			$newPass = $this->input->post('password');
+			//hashes password for db
+			$default_password = password_hash($newPass, PASSWORD_BCRYPT);
+			//prep data for database insertion 
+			$data = array(
+				"customerFName" => $this->input->post('fname'),
+				"customerLName" => $this->input->post('lname'),
+				"customerCompany" => $this->input->post('company'),
+				"customerPhone" => $this->input->post('phone'),
+				"CustomerEmail" => $this->input->post('email'),
+				"customerNews" => $this->input->post('news'),
+				"username" => $this->input->post('username'),
+				"usertype" => ('customer'),
+				"password" => ($default_password),
+				"resetCode" => ('0')
+			);
+			// inserts user data into db and loads login page
+			$query = $this->db->insert('customers', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/signupSuccess');
+			$this->load->view('templates/footer');
+		}else{
+			$this->load->view('templates/header3');
+			$this->load->view('errors/signup_error');
+			$this->load->view('templates/footer');
+		}
 	}
 	public function login_validation(){
 		// loads form validation library
 		$this->load->library('form_validation');
 		// sets rules for form validation for login upon success load dashboard
+		//check if usename is in database using validate_credentials()
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|callback_validate_credentials');
+		$this->form_validation->set_message('validate_credentials', 'Your username cannot be found');
 		//sets rules for password 
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
-			//if successful form validation load dashboard
+		//if successful form validation check password against db then load dashboard
 		if($this->form_validation->run()){
-			$data = array(
-				'username' => $this->input->post('username'),
-				'is_logged_in' => 1);
-			$this->session->set_userdata($data);
-			redirect ('Dashboard');
-		} else{
+			//query db for password attached to username
+			$user = $this->input->post('username');
+			$sql = 'SELECT password FROM customers WHERE username = ?';
+			$query = $this->db->query($sql, $user);
+			$result = $query->result();
+			//convert array for password to string
+			foreach ($result as $row) {
+				//password in db
+				$dbpass = $row->password;
+				//password entered by a valid user
+				$userPass = $this->input->post('password');
+				//compare password entered and database value
+				if(password_verify($userPass, $dbpass)){ 
+					$data = array(
+					'username' => $this->input->post('username'),
+					'is_logged_in' => 1);
+					//set session data with username
+					$this->session->set_userdata($data);
+					//load dashboard
+					redirect ('Dashboards');
+				}else{
 			// loads login.php login form again
-				$this->load->view('templates/header3');
-				$this->load->view('errors/signin_error');
-				$this->load->view('templates/footer');
-		}
-
-	}
+					$this->load->view('templates/header3');
+					$this->load->view('errors/password_error');
+					$this->load->view('templates/footer');
+				}//close if(password_verify())
+			}//close foreach
+		}else{
+			// loads login.php login form again
+					$this->load->view('templates/header3');
+					$this->load->view('errors/signin_error');
+					$this->load->view('templates/footer');
+		}//close if(validation run)	
+	}//close function
 	public function validate_credentials(){
 		// loads ModelUsers db model
 		$this->load->model('ModelUsers');
 		// checks if true for ModelUsers
 		if($this->ModelUsers->can_log_in())
 		{
-			return true;
-		} else {
-			$this->form_validation->set_message('validate_credentials', 'Incorrect login');
-			return false;
+			return TRUE;
+		}else{
+			
+			return FALSE;
 		}
 
 	}
@@ -112,7 +137,7 @@ class MGTracker extends CI_Controller{
 				$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_";
 				$pin_verification = substr( str_shuffle( $chars ), 0, 8 );
 				$data = array('resetCode' => $pin_verification);
-				$this->db->where('email', $email);
+				$this->db->where('CustomerEmail', $email);
 				$this->db->update('customers', $data);
 				//load successful views
 				$this->load->view('templates/header3');
@@ -123,7 +148,7 @@ class MGTracker extends CI_Controller{
 				$this->email->from('gdp@juanitahales.com');
 				$this->email->to($email);
 				$this->email->subject('Reset Your MGTracker Password');
-				$this->email->message('Hello you requested we reset your password please click the link:
+				$this->email->message('Hello you requested we reset your password please click the link:http://localhost/MGTRacker/index.php/MGTRacker/reset_verification
 				       
 				 Enter your email address and the pin from this email.          '          
 				 .$pin_verification.
@@ -193,16 +218,19 @@ class MGTracker extends CI_Controller{
 		if ($this->form_validation->run()){
 			//declare email
 			$data = $this->input->post('email');
-			$data2 = array(
-				'password' => $this->input->post('password'), 
+			$newPass = $this->input->post('password');
+			//hashes password for db
+			$default_password = password_hash($newPass, PASSWORD_BCRYPT);
+			$pass = array(
+				"password" => ($default_password)
 			);
 			//update new password
 			$this->db->where('CustomerEmail', $data);
-			$this->db->update('customers', $data2);
+			$this->db->update('customers', $pass);
 			//update new pin
 			$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_";
 			$pin_verification = substr( str_shuffle( $chars ), 0, 8 );
-			$data3 = array('resetCode' => $resetCode);
+			$data3 = array('resetCode' => $pin_verification);
 			$this->db->where('CustomerEmail', $data);
 			$this->db->update('customers', $data3);
 			//display message

@@ -46,9 +46,10 @@
 									echo '</div>'; 
 									//modal footer
 									echo '<div class="modal-footer" style="padding-right:18%;">';
-									echo '<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>';
+									echo '<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>';
 							    	echo '<button id="login_submit" class="btn btn-primary btn-sm" type="submit">Login</button>';
-									echo '<button type="button" class="btn btn-sm btn-link" href="MGTracker/forgot_password">Forgot Password</button>';
+									echo '<a href="index.php/MGTracker/forgot_password" class="btn btn-primary btn-sm">Reset Password</a>';
+
 									echo form_close();
 
 							   	?> 

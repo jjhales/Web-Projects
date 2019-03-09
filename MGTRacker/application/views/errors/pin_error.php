@@ -11,22 +11,21 @@
 		    				<div class="modal-content">
 		    				<!-- header -->
 		      					<div class="modal-header" "style=opacity:1;">
-		        					<h4 class="modal-title"></h4>
+		        					<h4 class="modal-title">Error</h4>
 		      					</div>
 		      					<!-- signin error body -->
 			     					<div class="modal-body" id="sign_up_error_msg">
 
 									<?php
 										echo "<h3> We're sorry we could not reset your password due to the following errors:</h3>";
-										echo "<h3>";
+										echo "<p>";
 										echo "Email address and Pin do not match";
-										echo "</h3>";
-										echo "<h3>Please try again</h3>";
-										echo "</div>";
+										echo "</p>";
+										echo "<p>Please try again</p>";
 									?>
 									</div>
 	     						<div class="modal-footer">
-	     							<button type="button" class="btn btn-primary btn-lg" value="Back" onclick="goBack()">Try Again</button>
+	     							<button type="button" class="btn btn-primary" value="Back" onclick="goBack()">Try Again</button>
 								</div> <!-- close modal footer -->
 							</div><!-- /.modal-content -->
 						</div><!-- /.modal-dialog -->
