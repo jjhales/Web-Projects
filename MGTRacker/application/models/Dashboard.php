@@ -68,7 +68,7 @@ class Dashboard extends CI_Model{
 	}
 	public function unusedNutrient(){
 		$data = $this->session->userdata('company');
-		$sql = "SELECT nutrients.nutrientName, nutrients.nutrientManufacturer, SUM(nutrients.nutrientSize) AS nutrientInputTotal, AVG(nutrients.nutrientPrice) AS avgnutrientCost, nutrientuse.nutrientAmount FROM nutrients LEFT JOIN nutrientuse ON nutrients.nutrientName = nutrientuse.nutrientName AND nutrients.nutrientManufacturer = nutrientuse.nutrientManufacturer AND nutrients.company = nutrientuse.company WHERE nutrientuse.nutrientAmount IS NULL AND nutrientuse.company = ? GROUP BY nutrients.nutrientName, nutrients.nutrientManufacturer";
+		$sql = "SELECT nutrients.nutrientName, nutrients.nutrientManufacturer, SUM(nutrients.nutrientSize) AS nutrientInputTotal, AVG(nutrients.nutrientPrice) AS avgnutrientCost, nutrientuse.nutrientAmount FROM nutrients LEFT JOIN nutrientuse ON nutrients.nutrientName = nutrientuse.nutrientName AND nutrients.nutrientManufacturer = nutrientuse.nutrientManufacturer AND nutrients.company = nutrientuse.company WHERE nutrientuse.nutrientAmount IS NULL AND nutrients.company = ? GROUP BY nutrients.nutrientName, nutrients.nutrientManufacturer";
 		$query = $this->db->query($sql, $data);
 		return $query->result();
 	}
