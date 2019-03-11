@@ -25,5 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<title>MGTrackerTest</title>
 		</head>
 		<div id='top'></div>
+		<a href='<?php echo "./MGTracker/logout"?>' class="btn btn-primary btn-sm" style="float:right;">Log Out</a>
 		<div class="container">
+
 		

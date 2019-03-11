@@ -9,10 +9,15 @@ class Dashboards extends CI_Controller{
 		$this->load->model('Dashboard');
 		//prepping data
 		$data['harvestInventory'] = $this->Dashboard->harvestInventory();
+		$data['harvestPlantInventory'] = $this->Dashboard->harvestPlantInventory();
 		$data['avgHarvestInventory'] = $this->Dashboard->avgHarvestInventory();
+		$data['avgPlantHarvestInventory'] = $this->Dashboard->avgPlantHarvestInventory();
 		$data['seedPurchasedInventory'] = $this->Dashboard->seedPurchasedInventory();
 		$data['seedUsedInventory'] = $this->Dashboard->seedUsedInventory();
 		$data['seedUnusedInventory'] = $this->Dashboard->unusedSeed();
+		$data['plantPurchasedInventory'] = $this->Dashboard->plantPurchasedInventory();
+		$data['plantUsedInventory'] = $this->Dashboard->plantUsedInventory();
+		$data['plantUnusedInventory'] = $this->Dashboard->unusedPlant();
 		$data['mediumPurchasedInventory'] = $this->Dashboard->mediumPurchasedInventory();
 		$data['mediumUsedInventory'] = $this->Dashboard->mediumUsedInventory();
 		$data['mediumUnusedInventory'] =$this->Dashboard->unusedMedium();

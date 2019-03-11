@@ -74,7 +74,73 @@ $this->load->helper('form');
 	echo form_close();
 	echo "</div>";
 	echo "</div>";
-
+//plant input : anytime plant is purchased
+	echo '<button class="btn btn-primary btn-lg btn-block" id="showplant" data-toggle="collapse" href="#plantMaterial" role="button" aria-expanded="false" aria-controls="plantMaterial"style="margin-bottom:0.5%;">Add Plants</button>';
+	echo '<div id="plantMaterial" class="col collapse card">';
+ 	echo validation_errors();
+	echo form_open('FarmMaterials/addPlant');
+	echo '<div class="card-body">'; 
+	//plant name
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Plant Name ", "plantName");
+	echo '</div><div class="col">';
+	echo '<input type="text" class="form-control" name="plantName" list="plantNames" placeholder="">';
+	echo '<datalist id="plantNames">';
+	foreach($plantList as $row){
+		echo '<option value="';
+		echo $row->plantName;
+		echo '">';
+		echo $row->plantName;
+		echo '</option>';
+	};
+	echo '</datalist>';
+	echo '</div></div>';
+	//plant vendor
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Plant Vendor ", "plantVendor");
+	echo '</div><div class="col">';
+	echo '<input type="text" class="form-control" name="plantVendor" list="plantVendors">';
+	echo '<datalist id="plantVendors">';
+	foreach($plantVendor as $row){
+		echo '<option value="';
+    	echo $row->plantVendor;
+		echo '">';
+		echo $row->plantVendor;
+		echo '</option>';
+	};
+	echo '</datalist>';
+	echo '</div></div>';
+	//plant manufacturer
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Plant Manufacturer " , "plantManufacturer");
+	echo '</div><div class="col">';
+	echo '<input type="text" class="form-control" name="plantManufacturer" list="plantManufacturers">';
+	echo '<datalist id="plantManufacturers">';
+	foreach($plantManufacturer as $row){
+		echo '<option value="';
+		echo $row->plantManufacturer;
+		echo '">';
+		echo $row->plantManufacturer;
+		echo '</option>';
+	};
+	echo '</datalist>';
+	echo '</div></div>';
+	//plant amount
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Plant Amount ", "plantAmount");
+	echo '</div><div class="col">'; 
+	echo '<input type="decimal" class="form-control-sm" name="plantAmount" placeholder="Number of plants">'; 
+	echo '</div></div>';
+	//plant price
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Plant Price ", "fplantPrice");
+	echo '</div><div class="col">'; 
+	echo '<input type="decimal" class="form-control-sm"name="fplantPrice" placeholder="Amount Paid"></br>';
+	echo '</div></div>';
+	echo form_submit("plantSubmit", "submit" , "class='submit btn btn-primary btn-sm'");
+	echo form_close();
+	echo "</div>";
+	echo "</div>";
 //medium input: anytime medium is purchased
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showMedia" data-toggle="collapse" href="#mediumMaterial" role="button" aria-expanded="false" aria-controls="mediumMaterial" style="margin-bottom:0.5%;">Add Medium</button>';
 	echo '<div id="mediumMaterial" class="col collapse card">';

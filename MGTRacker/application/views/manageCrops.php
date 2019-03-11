@@ -7,8 +7,8 @@ $this->load->helper('form');
 	echo '</div>';
 //manage crops
 	echo '<h3>Manage Crops</h3>';
-	echo '<button class="btn btn-primary btn-lg btn-block" id="showNewCrop" data-toggle="collapse" href="#newCrop" role="button" aria-expanded="false" aria-controls="newCrop"style="margin-bottom:0.5%;">Add Crop</button>';
-//add new crops
+	echo '<button class="btn btn-primary btn-lg btn-block" id="showNewCrop" data-toggle="collapse" href="#newCrop" role="button" aria-expanded="false" aria-controls="newCrop"style="margin-bottom:0.5%;">Add Seed</button>';
+//add new seed crops
     echo '<div id="newCrop" class="card col collapse">';
 	echo validation_errors();
 	echo form_open('Crops/addCrop', 'class="card-body"');
@@ -135,6 +135,82 @@ $this->load->helper('form');
 	echo form_close();
 	echo '</div>';
 	echo '</div>';
+//Add Plants
+	echo '<button class="btn btn-primary btn-lg btn-block" id="showNewPlantCrop" data-toggle="collapse" href="#newPlantCrop" role="button" aria-expanded="false" aria-controls="newPlantCrop"style="margin-bottom:0.5%;">Add Plants</button>';
+//add new plant crops
+    echo '<div id="newPlantCrop" class="card col collapse">';
+	echo validation_errors();
+	echo form_open('Crops/addPlantCrop', 'class="card-body"');
+	echo '<div>';
+		//plant name
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Plant Name ", "plantName");
+	echo '</div><div class="col">';
+	echo '<select class="form-control" name="plantName">';
+	foreach($plantList as $row){
+		echo '<option value="';
+		echo $row->plantName;
+		echo '">';
+		echo $row->plantName;
+		echo '</option>';
+	};
+	echo '</select>';
+	echo '</div>';
+	echo '</div>';
+		//plant manufacturer
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Plant Manufacturer " , "plantManufacturer");
+	echo '</div><div class="col">';
+	echo '<select class="form-control " name="plantManufacturer">';
+	foreach($plantManufacturer as $row){
+		echo '<option value="';
+		echo $row->plantManufacturer;
+		echo '">';
+		echo $row->plantManufacturer;
+		echo '</option>';
+	};
+	echo '</select>';
+	echo '</div></div>';
+	//plant used
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Plant Amount ", "plantAmount");
+	echo '</div><div class="col">';
+	echo '<input type="decimal" class="form-control-sm " name="plantAmount">';
+	echo '</div></div>';
+	//date start
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Start Date ", "dateStart");
+	echo '</div><div class="col">';
+	echo '<input type="date" class="form-control " name = "dateStart">';
+	echo '</div></div>';
+	//testing or production
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Testing or Production", "testing");
+	echo '</div><div class="col">';
+	echo '<select class="form-control " name="testing">';
+	echo '<option value="testing">Testing</option>';
+	echo '<option value="production">Production</option>';
+	echo '</select>';
+	echo '</div></div>';
+	echo '<div class="form-row"><div class="col">';
+	echo form_label("Location ", "location");
+	echo '</div><div class="col">';
+	echo '<input type="text" class="form-control" name="location" list="locations" placeholder="">';
+	echo '<datalist id="locations">';
+	foreach($location as $row){
+		echo '<option value="';
+		echo $row->location;
+		echo '">';
+		echo $row->location;
+		echo '</option>';
+	};
+	echo '</datalist>';
+	echo '</div></div>';
+	echo form_submit("cropPlantSubmit", "submit" , "class='submit btn btn-primary btn-sm'");
+	echo form_close();
+	echo '</div>';
+	echo '</div>';
+
 //germination - update crops
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showGerm" data-toggle="collapse" href="#germUpdate" role="button" aria-expanded="false" aria-controls="germUpdate" style="margin-bottom:0.5%;">Germination<span class="badge badge-light" style="margin-left:2.5%;">';
 	foreach ($germinationCount as $row) {
@@ -200,9 +276,13 @@ $this->load->helper('form');
 
 //grow - update crops
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showGrow" data-toggle="collapse" href="#growUpdate" role="button" aria-expanded="false" aria-controls="growUpdate"style="margin-bottom:0.5%;">Grow<span class="badge badge-light" style="margin-left:2.5%;">';
-	foreach ($growCount as $row) {
-		echo $row->growCrops;
-	};
+	foreach ($growCount as $value) {
+		$seedcount = $value->growCrops;
+	foreach ($growPlantCount as $value) {
+		$plantcount = $value->growPlantCrops;
+		$totalcount = $seedcount + $plantcount;
+		echo $totalcount;
+	}}
 	echo '</button>';
 	echo '<div id="growUpdate" class="collapse" style="float:left;">';
 	foreach ($grow as $row) {
@@ -254,6 +334,55 @@ $this->load->helper('form');
 		echo '<input type="range" class="form-control-sm " name="cropRating" min="0" max="5">';
 		echo '</div></div>';
 		echo form_submit("updateEnd", "Update" , "class='submit btn btn-primary btn-sm'");
+		echo form_close();
+		echo '</div></div>';
+
+	}
+	foreach ($plantsgrow as $row) {
+		echo '<div class="card col-xs-auto" style="float:left;">';
+		echo '<div class="card-body" style="padding:0.57rem;">';
+		echo '<button class="btn btn-sm btn-link" id="showGrowdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+		echo '<div>Start Date: ';
+		echo $row->dateStart;
+		echo '</div><div>Plant Manufacturer: ';
+		echo $row->plantManufacturer;
+		echo '</div><div> Plant Amount: ';
+		echo $row->plantAmount;
+		echo '</div><div>Location: ';
+		echo $row->location;
+		echo '</div>';
+		echo '" style="float:right;">details</button>';
+		echo form_open('Crops/updatePlantGrow');
+		echo '<div class="form-row"><div class="col">';
+		echo form_label("Crop Number ", "plantNumber", 'class="form-control-sm"');
+		echo '</div><div class="col">';
+		echo '<input type ="text" class="form-control-sm form-control-plaintext" name = "plantNumber" value ="';
+		echo $row->plantNumber;
+		echo '"readonly"></div></div>';
+		echo '<div class="form-row"><div class="col">';
+		echo form_label("Plant Name ","plantName", 'class="form-control-sm"');
+		echo '</div><div class="col">';
+		echo '<input type ="text" class="form-control-sm form-control-plaintext" name = "plantName" value ="';
+		echo $row->plantName;
+		echo '"readonly"></div></div>';
+		echo '<div class="form-row"><div class="col">';
+		echo form_label("Harvest Date", "dateEnd", 'class="form-control-sm"');
+		echo '</div><div class="col">';
+		echo '<input type="date" class="form-control-sm " name="dateEnd">';
+		echo '</div></div>';
+		echo '<div class="form-row"><div class="col-xs">';
+		echo form_label("Yield", "yWeight", 'class="form-control-sm"');
+		echo '</div><div class="col-xs">';
+		echo '<input type="decimal" class="form-control form-control-sm" name="yWeight">';
+		echo '</div><div class="col-xs">';
+		echo '<select class="form-control form-control-sm" name="weight"><option>oz<option><option>lb</option><option>g<option></select>';
+		echo '</div></div>';
+		echo '<div class="form-row"><div class="col">';
+		echo form_label("Crop Rating", "cropRating", 'class="form-control-sm"');
+		echo '</div><div class="col">';
+		echo '<input type="range" class="form-control-sm " name="cropRating" min="0" max="5">';
+		echo '</div></div>';
+		echo form_submit("updatePlantEnd", "Update" , "class='submit btn btn-primary btn-sm'");
 		echo form_close();
 		echo '</div></div>';
 	}

@@ -11,6 +11,9 @@ class FarmMaterials extends CI_Controller{
 		$data['seedList'] = $this->FarmMaterial->seedList();
 		$data['seedVendor'] = $this->FarmMaterial->seedVendor();
 		$data['seedManufacturer'] = $this->FarmMaterial->seedManufacturer();
+		$data['plantList'] = $this->FarmMaterial->plantList();
+		$data['plantVendor'] = $this->FarmMaterial->plantVendor();
+		$data['plantManufacturer'] = $this->FarmMaterial->plantManufacturer();
 		$data['mediumName'] = $this->FarmMaterial->mediumName();
 		$data['mediumVendor'] = $this->FarmMaterial->mediumVendor();
 		$data['mediumManufacturer'] = $this->FarmMaterial->mediumManufacturer();
@@ -80,6 +83,49 @@ class FarmMaterials extends CI_Controller{
 			);
 			//insert into db
 			$query = $this->db->insert('seed', $data);
+			$this->load->view('templates/header3');
+			$this->load->view('success/addSuccess');
+	}
+	public function addPlant(){
+		//turn on validation
+		$this->load->library('form_validation');
+		//set validation rules
+		$this->form_validation->set_rules('plantName', 'plant Name', 'required' );
+		$this->form_validation->set_rules('plantAmount', 'plant Amount', 'required');
+		$this->form_validation->set_rules('fplantPrice', 'plant Price', 'required');
+		//run validation
+		if($this->form_validation->run()){
+			$plantAmount = $this->input->post("plantAmount");
+			$firstPrice = $this->input->post("fplantPrice");
+			$lastPrice = $firstPrice/$plantAmount;  
+			//prep data for DB in array
+			$data = array(
+				'plantName' => $this->input->post('plantName'),
+				'plantVendor' => $this->input->post('plantVendor'),
+				'plantManufacturer' => $this->input->post('plantManufacturer'),
+				'plantAmount' => $plantAmount,
+				'plantPrice' => $lastPrice
+			);
+			//insert into db
+			$this->load->view('templates/header3');
+			$this->load->view('success/plantSuccess', $data);
+		}else{
+			$this->load->view('templates/header3');
+			$this->load->view('errors/crop_error');
+		}
+	}
+	public function validatePlant(){
+			$data = array(
+				'plantName' => $this->input->post('plantName'),
+				'plantVendor' => $this->input->post('plantVendor'),
+				'plantManufacturer' => $this->input->post('plantManufacturer'),
+				'plantAmount' => $this->input->post('plantAmount'),
+				'plantPrice' => $this->input->post('plantPrice'),
+				'username' => $this->session->userdata('username'),
+				'company' => $this->session->userdata('company')
+			);
+			//insert into db
+			$query = $this->db->insert('plant', $data);
 			$this->load->view('templates/header3');
 			$this->load->view('success/addSuccess');
 	}

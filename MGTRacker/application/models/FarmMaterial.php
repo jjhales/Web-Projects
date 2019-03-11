@@ -19,6 +19,24 @@ class FarmMaterial extends CI_Model{
 		$query = $this->db->query($sql, $data);
 		return $query->result();	
 	}
+	public function plantList(){
+		$data = $this->session->userdata('company');
+		$sql = "SELECT plant.plantName FROM plant WHERE plant.company = ? GROUP BY plantName ORDER BY plantName asc";
+		$query = $this->db->query($sql, $data);
+		return $query->result();	
+	}
+	public function plantVendor(){
+		$data = $this->session->userdata('company');
+		$sql = "SELECT plant.plantVendor FROM plant WHERE plant.company = ? GROUP BY plantVendor ORDER BY plantVendor asc";
+		$query = $this->db->query($sql, $data);
+		return $query->result();	
+	}
+	public function plantManufacturer(){
+		$data = $this->session->userdata('company');
+		$sql = "SELECT plant.plantManufacturer FROM plant WHERE plant.company = ? GROUP BY plantManufacturer ORDER BY plantManufacturer asc";
+		$query = $this->db->query($sql, $data);
+		return $query->result();	
+	}
 	public function mediumName(){
 		$data = $this->session->userdata('company');
 		$sql = "SELECT medium.mediumName FROM medium WHERE medium.company = ? GROUP BY mediumName ORDER BY mediumName asc";

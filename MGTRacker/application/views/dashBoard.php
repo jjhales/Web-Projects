@@ -1,4 +1,4 @@
-<a href='<?php echo "./MGTracker/logout"?>' class="btn btn-primary btn-sm" style="float:right;">Log Out</a>
+
 <p>Welcome Back
 	<?php
 		$username = $this->session->userdata('username');
@@ -27,11 +27,11 @@ echo '<table class="table">';
 	echo '<thead>';
 	echo '<tr>';
 	echo '<th scope="col">Crop</th>';
-	echo '<th scope="col">Seed Name</th>';
-	echo '<th scope="col">Seed Manufacturer</th>';
+	echo '<th scope="col">Seed/Plant Name</th>';
+	echo '<th scope="col">Seed/Plant Manufacturer</th>';
 	echo '<th scope="col">Start Date</th>';
 	echo '<th scope="col">Harvest Date</th>';
-	echo '<th scope="col">Seed Used</th>';
+	echo '<th scope="col">Seed/Plant Used</th>';
 	echo '<th scope="col">Yield</th>';
 	echo '<th scope="col">Rating</th>';
 	echo '<th scope="col">Details</th>';
@@ -85,6 +85,44 @@ foreach ($harvestInventory as $value) {
 	echo '</td>';
 	echo '</tr>';
 }
+foreach ($harvestPlantInventory as $value) {
+	echo '<tr>';
+	echo '<td>';
+	echo $value->plantNumber;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantName;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantManufacturer;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateStart;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateEnd;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantAmount;
+	echo '</td>';
+	echo '<td>';
+	echo $value->yieldWeight;
+	echo 'g</td>';
+	echo '<td>';
+	echo $value->cropRating;
+	echo '</td>';
+	echo '<td>';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<div>Test/Prod: ';
+	echo $value->testing;
+	echo '</div>';
+	echo '<div>Location: ';
+	echo $value->location;
+	echo '</div>';
+	echo '" style="float:right;">details</button>';
+	echo '</td>';
+	echo '</tr>';
+}
 	echo '</tbody>';
 echo '</table>';
 echo '</div>';
@@ -95,9 +133,9 @@ echo '<h4>Average Lifetime Harvest</h4>';
 echo '<table class="table">';
 	echo '<thead>';
 	echo '<tr>';
-	echo '<th scope="col">Seed Name</th>';
-	echo '<th scope="col">Seed Manufacturer</th>';
-	echo '<th scope="col">Average Seed Used</th>';
+	echo '<th scope="col">Seed/Plant Name</th>';
+	echo '<th scope="col">Seed/Plant Manufacturer</th>';
+	echo '<th scope="col">Average Seed/Plant Used</th>';
 	echo '<th scope="col">Medium Name</th>';
 	echo '<th scope="col">Total Medium Used</th>';
 	echo '<th scope="col">Average Yield</th>';
@@ -144,6 +182,38 @@ foreach ($avgHarvestInventory as $value) {
 	echo '</td>';
 	echo '</tr>';
 }
+foreach ($avgPlantHarvestInventory as $value) {
+	echo '<tr>';
+	echo '<td>';
+	echo $value->plantName;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantManufacturer;
+	echo '</td>';
+	echo '<td>';
+	echo $value->avgPlantAmount;
+	echo '</td>';
+	echo '<td>';
+	echo 'N/A';
+	echo '</td>';
+	echo '<td>';
+	echo 'N/A';
+	echo '</td>';
+	echo '<td>';
+	echo $value->avgYieldWeight;
+	echo 'g</td>';
+	echo '<td>';
+	echo $value->avgCropRating;
+	echo '</td>';
+	echo '<td>';
+	echo '<button class="btn btn-sm btn-link" id="showAvgHarvestDetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<div>Test/Prod: ';
+	echo $value->testing;
+	echo '</div>';
+	echo '" style="float:right;">details</button>';
+	echo '</td>';
+	echo '</tr>';
+}
 	echo '</tbody>';
 echo '</table>';
 echo '</div>';
@@ -160,7 +230,7 @@ echo '<table class="table">';
 	echo '<th scope="col">Seed Manufacturer</th>';
 	echo '<th scope="col">Start Date</th>';
 	echo '<th scope="col">Harvest Date</th>';
-	echo '<th scope="col">Seed Used</th>';
+	echo '<th scope="col">Seed/Plant Used</th>';
 	echo '<th scope="col">Yield</th>';
 	echo '<th scope="col">Rating</th>';
 	echo '<th scope="col">Details</th>';
@@ -169,7 +239,7 @@ echo '<table class="table">';
 	echo '<tbody>';
 foreach ($harvestInventory as $value) {
 	$harvestDate = $value->dateEnd;
-	if($harvestDate > '2018-12-01' AND $harvestDate < '2019-02-28'){
+	if($harvestDate >= '2018-12-01' AND $harvestDate <= '2019-02-28'){
 	echo '<tr>';
 	echo '<td>';
 	echo $value->flatNumber;
@@ -206,6 +276,46 @@ foreach ($harvestInventory as $value) {
 	echo '<div>Yield Value: ';
 	echo $yieldValue = $value->yieldWeight/$value->seedUsed;
 	echo '</div>';
+	echo '<div>Test/Prod: ';
+	echo $value->testing;
+	echo '</div>';
+	echo '<div>Location: ';
+	echo $value->location;
+	echo '</div>';
+	echo '" style="float:right;">details</button>';
+	echo '</td>';
+	echo '</tr>';
+}}
+foreach ($harvestPlantInventory as $value) {
+	$harvestDate = $value->dateEnd;
+	if($harvestDate >= '2018-12-01' AND $harvestDate <= '2019-02-28'){
+	echo '<tr>';
+	echo '<td>';
+	echo $value->plantNumber;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantName;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantManufacturer;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateStart;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateEnd;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantAmount;
+	echo '</td>';
+	echo '<td>';
+	echo $value->yieldWeight;
+	echo 'g</td>';
+	echo '<td>';
+	echo $value->cropRating;
+	echo '</td>';
+	echo '<td>';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Test/Prod: ';
 	echo $value->testing;
 	echo '</div>';
@@ -228,11 +338,11 @@ echo '<table class="table">';
 	echo '<thead>';
 	echo '<tr>';
 	echo '<th scope="col">Crop</th>';
-	echo '<th scope="col">Seed Name</th>';
-	echo '<th scope="col">Seed Manufacturer</th>';
+	echo '<th scope="col">Seed/Plant Name</th>';
+	echo '<th scope="col">Seed/Plant Manufacturer</th>';
 	echo '<th scope="col">Start Date</th>';
 	echo '<th scope="col">Harvest Date</th>';
-	echo '<th scope="col">Seed Used</th>';
+	echo '<th scope="col">Seed/Plant Used</th>';
 	echo '<th scope="col">Yield</th>';
 	echo '<th scope="col">Rating</th>';
 	echo '<th scope="col">Details</th>';
@@ -241,7 +351,7 @@ echo '<table class="table">';
 	echo '<tbody>';
 foreach ($harvestInventory as $value) {
 	$harvestDate = $value->dateEnd;
-	if($harvestDate > '2019-03-01' AND $harvestDate < '2019-05-31'){
+	if($harvestDate >= '2019-03-01' AND $harvestDate <= '2019-05-31'){
 	echo '<tr>';
 	echo '<td>';
 	echo $value->flatNumber;
@@ -278,6 +388,46 @@ foreach ($harvestInventory as $value) {
 	echo '<div>Yield Value: ';
 	echo $yieldValue = $value->yieldWeight/$value->seedUsed;
 	echo '</div>';
+	echo '<div>Test/Prod: ';
+	echo $value->testing;
+	echo '</div>';
+	echo '<div>Location: ';
+	echo $value->location;
+	echo '</div>';
+	echo '" style="float:right;">details</button>';
+	echo '</td>';
+	echo '</tr>';
+}}
+foreach ($harvestPlantInventory as $value) {
+	$harvestDate = $value->dateEnd;
+	if($harvestDate >= '2018-03-01' AND $harvestDate <= '2019-05-31'){
+	echo '<tr>';
+	echo '<td>';
+	echo $value->plantNumber;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantName;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantManufacturer;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateStart;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateEnd;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantAmount;
+	echo '</td>';
+	echo '<td>';
+	echo $value->yieldWeight;
+	echo 'g</td>';
+	echo '<td>';
+	echo $value->cropRating;
+	echo '</td>';
+	echo '<td>';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Test/Prod: ';
 	echo $value->testing;
 	echo '</div>';
@@ -300,11 +450,11 @@ echo '<table class="table">';
 	echo '<thead>';
 	echo '<tr>';
 	echo '<th scope="col">Crop</th>';
-	echo '<th scope="col">Seed Name</th>';
-	echo '<th scope="col">Seed Manufacturer</th>';
+	echo '<th scope="col">Seed/Plant Name</th>';
+	echo '<th scope="col">Seed/Plant Manufacturer</th>';
 	echo '<th scope="col">Start Date</th>';
 	echo '<th scope="col">Harvest Date</th>';
-	echo '<th scope="col">Seed Used</th>';
+	echo '<th scope="col">Seed/Plant Used</th>';
 	echo '<th scope="col">Yield</th>';
 	echo '<th scope="col">Rating</th>';
 	echo '<th scope="col">Details</th>';
@@ -313,7 +463,7 @@ echo '<table class="table">';
 	echo '<tbody>';
 foreach ($harvestInventory as $value) {
 	$harvestDate = $value->dateEnd;
-	if($harvestDate > '2019-06-01' AND $harvestDate < '2019-08-31'){
+	if($harvestDate >= '2019-06-01' AND $harvestDate <= '2019-08-31'){
 	echo '<tr>';
 	echo '<td>';
 	echo $value->flatNumber;
@@ -350,6 +500,46 @@ foreach ($harvestInventory as $value) {
 	echo '<div>Yield Value: ';
 	echo $yieldValue = $value->yieldWeight/$value->seedUsed;
 	echo '</div>';
+	echo '<div>Test/Prod: ';
+	echo $value->testing;
+	echo '</div>';
+	echo '<div>Location: ';
+	echo $value->location;
+	echo '</div>';
+	echo '" style="float:right;">details</button>';
+	echo '</td>';
+	echo '</tr>';
+}}
+foreach ($harvestPlantInventory as $value) {
+	$harvestDate = $value->dateEnd;
+	if($harvestDate >= '2018-06-01' AND $harvestDate <= '2019-08-31'){
+	echo '<tr>';
+	echo '<td>';
+	echo $value->plantNumber;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantName;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantManufacturer;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateStart;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateEnd;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantAmount;
+	echo '</td>';
+	echo '<td>';
+	echo $value->yieldWeight;
+	echo 'g</td>';
+	echo '<td>';
+	echo $value->cropRating;
+	echo '</td>';
+	echo '<td>';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
 	echo '<div>Test/Prod: ';
 	echo $value->testing;
 	echo '</div>';
@@ -372,11 +562,11 @@ echo '<table class="table">';
 	echo '<thead>';
 	echo '<tr>';
 	echo '<th scope="col">Crop</th>';
-	echo '<th scope="col">Seed Name</th>';
-	echo '<th scope="col">Seed Manufacturer</th>';
+	echo '<th scope="col">Seed/Plant Name</th>';
+	echo '<th scope="col">Seed/Plant Manufacturer</th>';
 	echo '<th scope="col">Start Date</th>';
 	echo '<th scope="col">Harvest Date</th>';
-	echo '<th scope="col">Seed Used</th>';
+	echo '<th scope="col">Seed/Plant Used</th>';
 	echo '<th scope="col">Yield</th>';
 	echo '<th scope="col">Rating</th>';
 	echo '<th scope="col">Details</th>';
@@ -385,7 +575,7 @@ echo '<table class="table">';
 	echo '<tbody>';
 foreach ($harvestInventory as $value) {
 	$harvestDate = $value->dateEnd;
-	if($harvestDate > '2019-09-01' AND $harvestDate < '2019-11-31'){
+	if($harvestDate >= '2019-09-01' AND $harvestDate <= '2019-11-31'){
 	echo '<tr>';
 	echo '<td>';
 	echo $value->flatNumber;
@@ -432,6 +622,46 @@ foreach ($harvestInventory as $value) {
 	echo '</td>';
 	echo '</tr>';
 }}
+foreach ($harvestPlantInventory as $value) {
+	$harvestDate = $value->dateEnd;
+	if($harvestDate >= '2018-09-01' AND $harvestDate <= '2019-11-31'){
+	echo '<tr>';
+	echo '<td>';
+	echo $value->plantNumber;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantName;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantManufacturer;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateStart;
+	echo '</td>';
+	echo '<td>';
+	echo $value->dateEnd;
+	echo '</td>';
+	echo '<td>';
+	echo $value->plantAmount;
+	echo '</td>';
+	echo '<td>';
+	echo $value->yieldWeight;
+	echo 'g</td>';
+	echo '<td>';
+	echo $value->cropRating;
+	echo '</td>';
+	echo '<td>';
+	echo '<button class="btn btn-sm btn-link" id="showGermdetails" data-toggle="popover" title="Additional Details" data-html="true" data-content="';
+	echo '<div>Test/Prod: ';
+	echo $value->testing;
+	echo '</div>';
+	echo '<div>Location: ';
+	echo $value->location;
+	echo '</div>';
+	echo '" style="float:right;">details</button>';
+	echo '</td>';
+	echo '</tr>';
+}}
 	echo '</tbody>';
 echo '</table>';
 echo '</div>';
@@ -439,13 +669,13 @@ echo '</div>';
 //farm material inventory
 echo '<h4>Farm Material Inventory</h4>';
 echo '<button type="button" id="showSeeds" class="btn btn-primary" data-toggle="collapse" href="#seedInventory" role="button" aria-expanded="false" aria-controls="seedInventory" style="margin-right:2%; margin-bottom:2%;">Seeds</button>';
+echo '<button type="button" id="showPlants" class="btn btn-primary" data-toggle="collapse" href="#plantInventory" role="button" aria-expanded="false" aria-controls="plantInventory" style="margin-right:2%; margin-bottom:2%;">Plants</button>';
 echo '<button type="button" id="showMedium" class="btn btn-primary" data-toggle="collapse" href="#mediumInventory" role="button" aria-expanded="false" aria-controls="mediumInventory" style="margin-right:2%; margin-bottom:2%;">Medium</button>';
 echo '<button type="button" id="showNutrient" class="btn btn-primary" data-toggle="collapse" href="#nutrientInventory" role="button" aria-expanded="false" aria-controls="nutrientInventory" style="margin-right:2%; margin-bottom:2%;">Nutrients</button>';
 echo '<button type="button" id="showEquipment" class="btn btn-primary" data-toggle="collapse" href="#equipmentInventory" role="button" aria-expanded="false" aria-controls="equipmentInventory" style="margin-right:2%; margin-bottom:2%;">Equipment</button>';
 //seed inventory
 echo '<div id="seedInventory" class="collapse">';
 echo '<h4>Seed Inventory</h4>';
-
 echo '<table class="table">';
 	echo '<thead>';
 	echo '<tr>';
@@ -517,6 +747,81 @@ foreach ($seedUnusedInventory as $value) {
 echo '</tbody>';
 echo '</table>';
 echo '</div>';
+//plant inventory
+echo '<div id="plantInventory" class="collapse">';
+echo '<h4>Plant Inventory</h4>';
+echo '<table class="table">';
+	echo '<thead>';
+	echo '<tr>';
+	echo '<th scope="col">Plant Name</th>';
+	echo '<th scope="col">Plant Manufacturer</th>';
+	echo '<th scope="col">Plant Amount</th>';
+	echo '<th scope="col">Plant Used</th>';
+	echo '<th scope="col">Plant Remainder</th>';
+	echo '<th scope="col">Average Plant Cost</th>';
+	echo '</tr>';
+	echo '</thead>';
+	echo '<tbody>';
+//Used plant
+foreach ($plantPurchasedInventory as $value) {
+		$plantNamePurchased = $value->plantName;
+		$plantManufacturerPurchased = $value->plantManufacturer;
+		$plantAmountPurchased = $value->plantInputTotal;
+		$plantCost = $value->avgPlantPrice;
+foreach ($plantUsedInventory as $value) {
+		$plantNameUsed = $value->plantName;
+		$plantManufacturerUsed = $value->plantManufacturer;
+		$usedplant = $value->plantUsedTotal;
+	if($plantNamePurchased === $plantNameUsed AND $plantManufacturerPurchased === $plantManufacturerUsed){
+		$plantRemainder =  $plantAmountPurchased - $usedplant;
+		echo '<tr>';
+		echo '<td>';
+		echo $plantNamePurchased;
+		echo '</td>';
+		echo '<td>';
+		echo $plantManufacturerPurchased;
+		echo '</td>';
+		echo '<td>';
+		echo $plantAmountPurchased;
+		echo '</td>';
+		echo '<td>';
+		echo $usedplant;
+		echo '</td>';
+		echo '<td>';
+		echo $plantRemainder;
+		echo '</td>';
+		echo '<td>$';
+		echo $plantCost;
+		echo '</td>';
+		echo '</tr>';
+	}
+}}
+//plants Not Used
+foreach ($plantUnusedInventory as $value) {
+		echo '<tr>';
+		echo '<td>';
+		echo $value->plantName;
+		echo '</td>';
+		echo '<td>';
+		echo $value->plantManufacturer;
+		echo '</td>';
+		echo '<td>';
+		echo $value->plantInputTotal;
+		echo 'g</td>';
+		echo '<td>';
+		echo '0g</td>';
+		echo '<td>';
+		echo $value->plantInputTotal;
+		echo 'g</td>';
+		echo '<td>$';
+		echo $value->avgPlantPrice;
+		echo '</td>';
+		echo '</tr>';
+}
+echo '</tbody>';
+echo '</table>';
+echo '</div>';
+
 //medium inventory
 echo '<div id="mediumInventory" class="collapse">';
 echo '<h4>Medium Inventory</h4>';

@@ -6,9 +6,21 @@ class Dashboard extends CI_Model{
 		$query = $this->db->query($sql, $data);
 		return $query->result();
 	}
+	public function harvestPlantInventory(){
+		$data = $this->session->userdata('company');
+		$sql = "SELECT * FROM plantcrops WHERE plantcrops.yieldWeight IS NOT NULL AND plantcrops.company = ?";
+		$query = $this->db->query($sql, $data);
+		return $query->result();
+	}
 	public function avgHarvestInventory(){
 		$data = $this->session->userdata('company');
 		$sql = "SELECT crops.seedName, AVG(crops.seedUsed) AS avgSeedUsed, crops.seedManufacturer, crops.mediumName, SUM(crops.mediumUsed) AS totalMediumUsed, crops.mediumManufacturer, crops.mediumMaterial, AVG(crops.yieldWeight) AS avgYieldWeight, crops.testing, AVG(crops.cropRating) AS avgCropRating FROM crops WHERE crops.yieldWeight IS NOT NULL AND crops.company = ? GROUP BY crops.seedName, crops.seedManufacturer, crops.mediumName, crops.mediumManufacturer, crops.mediumMaterial, crops.testing";
+		$query = $this->db->query($sql, $data);
+		return $query->result();
+	}
+	public function avgPlantHarvestInventory(){
+		$data = $this->session->userdata('company');
+		$sql = "SELECT plantcrops.plantName, AVG(plantcrops.plantAmount) AS avgPlantAmount, plantcrops.plantManufacturer, AVG(plantcrops.yieldWeight) AS avgYieldWeight, plantcrops.testing, AVG(plantcrops.cropRating) AS avgCropRating FROM plantcrops WHERE plantcrops.yieldWeight IS NOT NULL AND plantcrops.company = ? GROUP BY plantcrops.plantName, plantcrops.plantManufacturer, plantcrops.testing";
 		$query = $this->db->query($sql, $data);
 		return $query->result();
 	}
@@ -27,6 +39,24 @@ class Dashboard extends CI_Model{
 	public function unusedSeed(){
 		$data = $this->session->userdata('company');
 		$sql = "SELECT seed.seedName, seed.seedManufacturer, SUM(seed.seedAmount) AS seedInputTotal, AVG(seed.seedPrice) AS avgSeedPrice, crops.seedUsed FROM seed LEFT JOIN crops ON seed.seedName = crops.seedName AND seed.seedManufacturer = crops.seedManufacturer AND seed.company = crops.company WHERE crops.seedUsed IS NULL AND seed.company = ? GROUP BY seed.seedName, seed.seedManufacturer";
+		$query = $this->db->query($sql, $data);
+		return $query->result();
+	}
+	public function plantPurchasedInventory(){
+		$data = $this->session->userdata('company');
+		$sql = "SELECT plant.plantName, plant.plantManufacturer, SUM(plant.plantAmount) AS plantInputTotal, AVG(plant.plantPrice) AS avgPlantPrice FROM plant WHERE plant.company = ? GROUP BY plant.plantName, plant.plantManufacturer";
+		$query = $this->db->query($sql, $data);
+		return $query->result();
+	}
+	public function plantUsedInventory(){
+		$data = $this->session->userdata('company');
+		$sql = "SELECT plantcrops.plantName, plantcrops.plantManufacturer, SUM(plantcrops.plantAmount) AS plantUsedTotal FROM plantcrops WHERE plantcrops.company = ? GROUP BY plantcrops.plantName, plantcrops.plantManufacturer";
+		$query = $this->db->query($sql, $data);
+		return $query->result();
+	}
+	public function unusedPlant(){
+		$data = $this->session->userdata('company');
+		$sql = "SELECT plant.plantName, plant.plantManufacturer, SUM(plant.plantAmount) AS plantInputTotal, AVG(plant.plantPrice) AS avgPlantPrice, plantcrops.plantAmount FROM plant LEFT JOIN plantcrops ON plant.plantName = plantcrops.plantName AND plant.plantManufacturer = plantcrops.plantManufacturer AND plant.company = plantcrops.company WHERE plantcrops.plantAmount IS NULL AND plant.company = ? GROUP BY plant.plantName, plant.plantManufacturer";
 		$query = $this->db->query($sql, $data);
 		return $query->result();
 	}
