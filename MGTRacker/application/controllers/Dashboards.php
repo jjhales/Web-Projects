@@ -7,6 +7,7 @@ class Dashboards extends CI_Controller{
 		$this->load->model('FarmMaterial');
 		$this->load->model('Crop');
 		$this->load->model('Dashboard');
+		$this->load->model('ModelUsers');
 		//prepping data
 		$data['harvestInventory'] = $this->Dashboard->harvestInventory();
 		$data['harvestPlantInventory'] = $this->Dashboard->harvestPlantInventory();
@@ -25,10 +26,19 @@ class Dashboards extends CI_Controller{
 		$data['nutrientPurchasedInventory'] = $this->Dashboard->nutrientPurchasedInventory();
 		$data['nutrientUsedInventory'] = $this->Dashboard->nutrientUsedInventory();
 		$data['nutrientUnusedInventory'] = $this->Dashboard->unusedNutrient();
+		$user['profile'] = $this->ModelUsers->profile_view();
+		$data2['employee'] = $this->ModelUsers->employees();
+		$data2['customers'] = $this->ModelUsers->customers();
+		$data2['allusers'] = $this->ModelUsers->allUsers();
 		//load views
+		//usertype
 		$this->load->view('templates/header2');
 		$this->load->view('dashBoard', $data);
+		$this->load->view('profile', $user);
+		$this->load->view('editprofile', $user);
+		$this->load->view('personnel', $data2);
 		$this->load->view('templates/footer');
 	}
+	
 }
 ?>		

@@ -25,5 +25,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<title>MGTrackerTest</title>
 		</head>
 		<body>
-			<div id='top'></div>
-			<div class="container">

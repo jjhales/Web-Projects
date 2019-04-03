@@ -1,12 +1,41 @@
 <?php
 $this->load->helper('form');
-	echo '<div>';
-	echo '<a href="FarmMaterials" class="btn btn-primary" style="float:right; margin:0.5%;">Farm Materials</a>';
-	echo '<a href="Nutrients" class="btn btn-primary" style="float:right; margin:0.5%;">Nutrients</a>';
-	echo '<a href="Dashboards" class="btn btn-primary" style="float:right; margin:0.5%;">Dashboard</a>';
-	echo '</div>';
+echo '<nav class="navbar navbar-expand-sm navbar-light bg-light">';
+echo '<a class="navbar-brand" href="#"></a>';
+echo '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>';
+echo '<div id="navbar" class="collapse navbar-collapse role="navigation">';
+echo '<ul class="navbar-nav mr-auto">';
+echo '<li class="nav-item">';
+echo '<a href="FarmMaterials" class="nav-link">Farm Materials</a>';
+echo '</li>';
+echo '<li class="nav-item">';
+echo '<a href="Nutrients" class="nav-link">Nutrients</a>';
+echo '</li>';
+echo '<li class="nav-item">';
+echo '<a href="Dashboards" class="nav-link">Dashboard</a>';
+echo '</li>';
+echo '<li class="nav-item">';
+echo '<a href="./MGTracker/logout" class="nav-link">Log Out</a>';
+echo '</li>';
+echo '</ul>';
+echo '</div>';
+echo '</nav>';
+echo '<div class="container">';
+echo '<div class="row">';
+echo '<h4 class="col">Crops</h4>';
+echo '<p class="col"></p>';
+echo '<p class="col">';
+$company = $this->session->userdata('company');
+echo $company;
+echo ' User: ';
+$username = $this->session->userdata('username');
+echo $username;
+echo '</p>';
+echo '</div>';
+	
 //manage crops
-	echo '<h3>Manage Crops</h3>';
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showNewCrop" data-toggle="collapse" href="#newCrop" role="button" aria-expanded="false" aria-controls="newCrop"style="margin-bottom:0.5%;">Add Seed</button>';
 //add new seed crops
     echo '<div id="newCrop" class="card col collapse">';
@@ -228,7 +257,7 @@ $this->load->helper('form');
 		echo '</div><div>Seed Manufacturer: ';
 		echo $row->seedManufacturer;
 		echo '</div><div> Seed Used: ';
-		echo $row->seedUsed;
+		echo round($row->seedUsed, 3);
 		echo 'g</div><div>Medium Material: ';
 		echo $row->mediumMaterial;
 		echo '</div>';
@@ -296,7 +325,7 @@ $this->load->helper('form');
 		echo '</div><div>Seed Manufacturer: ';
 		echo $row->seedManufacturer;
 		echo '</div><div> Seed Used: ';
-		echo $row->seedUsed;
+		echo round($row->seedUsed, 3);
 		echo 'g</div><div>Medium Material: ';
 		echo $row->mediumMaterial;
 		echo '</div><div>Location: ';
@@ -387,9 +416,4 @@ $this->load->helper('form');
 		echo '</div></div>';
 	}
 	echo '</div>';
-	
-
-
-
-
 ?>

@@ -1,10 +1,38 @@
 <?php
-echo '<div>';
-echo '<a href="Crops" class="btn btn-primary" style="float:right; margin:0.5%;">Crops</a>';
-echo '<a href="Nutrients" class="btn btn-primary" style="float:right; margin:0.5%;">Nutrients</a>';
-echo '<a href="Dashboards" class="btn btn-primary" style="float:right; margin:0.5%;">Dashboard</a>';
+echo '<nav class="navbar navbar-expand-sm navbar-light bg-light">';
+echo '<a class="navbar-brand" href="#"></a>';
+echo '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>';
+echo '<div id="navbar" class="collapse navbar-collapse role="navigation">';
+echo '<ul class="navbar-nav mr-auto">';
+echo '<li class="nav-item">';
+echo '<a href="Crops" class="nav-link">Crops</a>';
+echo '</li>';
+echo '<li class="nav-item">';
+echo '<a href="Nutrients" class="nav-link">Nutrients</a>';
+echo '</li>';
+echo '<li class="nav-item">';
+echo '<a href="Dashboards" class="nav-link">Dashboard</a>';
+echo '</li>';
+echo '<li class="nav-item">';
+echo '<a href="./MGTracker/logout" class="nav-link">Log Out</a>';
+echo '</li>';
+echo '</ul>';
 echo '</div>';
-echo '<h3>Manage Materials</h3>';
+echo '</nav>';
+echo '<div class="container">';
+echo '<div class="row">';
+echo '<h4 class="col">Manage Materials</h4>';
+echo '<p class="col"></p>';
+echo '<p class="col">';
+$company = $this->session->userdata('company');
+echo $company;
+echo ' User: ';
+$username = $this->session->userdata('username');
+echo $username;
+echo '</p>';
+echo '</div>';
 //seed input : anytime seed is purchased
 	echo '<button class="btn btn-primary btn-lg btn-block" id="showSeed" data-toggle="collapse" href="#seedMaterial" role="button" aria-expanded="false" aria-controls="seedMaterial"style="margin-bottom:0.5%;">Add Seed</button>';
 $this->load->helper('form');

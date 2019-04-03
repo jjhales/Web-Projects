@@ -63,7 +63,7 @@
 				<div class="modal-dialog">
     				<div class="modal-content">
     				<!-- header -->
-      					<div class="modal-header" "style=opacity:1;">
+      					<div class="modal-header">
         					<h4 class="modal-title">Sign Up</h4>
       					</div>
       					<!-- sign up body -->
@@ -145,10 +145,6 @@
 									);
 									//create form input username
 									echo form_input($data);
-									//button to unhide username and password
-									echo '<a class="btn btn-link id="showUserLog" href="#userLog"  data-toggle="collapse" role="button" aria-expanded="false" aria-controls="userLog" style="margin-bottom:0.5%;">Become a MGTracker User</a>';
-									//create data array for CI to generate form_input username
-									echo '<div id="userLog" class="col collapse" style="margin-bottom:0.5%;">';
 									$data = array(
 										"name" => "username",
 										"id" => "username",
@@ -192,16 +188,15 @@
 									);
 									//create form input password
 									echo form_input($data);
-									//close userLog
-									echo '</div>';
-									//checkbox for agree to make account
 									echo '<p>';
-									echo form_checkbox('agree', 'agree');
-									echo "I agree to sign up with MGTracker";
-									echo '</p><p>';
 									//checkbox for newsletter signup
 									echo form_checkbox('news', 'news');
 									echo "I would like the MGTracker Newsletter";
+									echo '</p>';
+									//checkbox for agree to make account
+									echo '<p>';
+									echo form_checkbox('agree', 'agree');
+									echo "I agree to share information with MGTracker";
 									echo '</p>';
 								//close modal body
 								echo '</div>'; 
