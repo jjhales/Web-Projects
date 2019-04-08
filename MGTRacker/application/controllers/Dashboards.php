@@ -34,11 +34,14 @@ class Dashboards extends CI_Controller{
 		//usertype
 		$this->load->view('templates/header2');
 		$this->load->view('dashBoard', $data);
+		$this->load->view('personnel', $data2);
 		$this->load->view('profile', $user);
 		$this->load->view('editprofile', $user);
-		$this->load->view('personnel', $data2);
 		$this->load->view('templates/footer');
 	}
 	
 }
+
+
+
 ?>		

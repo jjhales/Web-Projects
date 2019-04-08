@@ -34,7 +34,7 @@
 									//create form input password
 								echo form_input($data);
 								echo '</p>';
-								echo '<button id="email_submit" class="btn btn-primary" type="submit">Submit</button>';
+								echo '<button id="email_submit" class="btn btn-primary btn-sm" type="submit">Submit</button>';
 								echo form_close();
 								echo '</div>';
 ?>

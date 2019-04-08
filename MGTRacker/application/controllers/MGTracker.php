@@ -156,10 +156,10 @@ class MGTracker extends CI_Controller{
 				$this->load->view('templates/footer');
 				//generate email 
 				$this->load->library('email');
-				$this->email->from('gdp@juanitahales.com');
+				$this->email->from('juanita@juanitahales.com');
 				$this->email->to($email);
 				$this->email->subject('Reset Your MGTracker Password');
-				$this->email->message('Hello you requested we reset your password please click the link:http://localhost/MGTRacker/index.php/MGTRacker/reset_verification
+				$this->email->message('Hello you requested we reset your password please click the link:http://www.juanitahales/MGTracker/index.php/MGTracker/reset_verification
 				       
 				 Enter your email address and the pin from this email.          '          
 				 .$pin_verification.
@@ -282,7 +282,7 @@ class MGTracker extends CI_Controller{
 				"customerLName" => $this->input->post('lname'),
 				"customerCompany" => $this->input->post('company'),
 				"customerPhone" => $this->input->post('phone'),
-				"CustomerEmail" => $this->input->post('email'),
+				"CustomerEmail" => $this->input->post('email')
 			);
 			//update db where username matches session data
 			$this->db->where('username',$username);

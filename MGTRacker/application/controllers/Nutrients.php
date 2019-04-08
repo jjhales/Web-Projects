@@ -79,7 +79,7 @@ class Nutrients extends CI_Controller{
 			);
 
 		//insert new value into the db
-			$query = $this->db->insert('nutrientUse', $data);
+			$query = $this->db->insert('nutrientuse', $data);
 			$this->load->view('templates/header3');
 			$this->load->view('success/addSuccess');
 
@@ -93,7 +93,7 @@ class Nutrients extends CI_Controller{
 		);
 		//remove a nutrient from active list
 		$this->db->where($data);
-		$this->db->update('nutrientUse', $notinUse);
+		$this->db->update('nutrientuse', $notinUse);
 		$this->load->view('templates/header3');
 		$this->load->view('success/addSuccess');
 

@@ -49,9 +49,9 @@
 							echo $nutrientUseDate;
 							echo '"readonly"></div></div>';
 							echo '<div style="margin-left:35%; margin-bottom:2%;">';
-	     					echo form_submit("useNutrients", "Confirm" , "class='submit btn btn-primary'");
+	     					echo form_submit("useNutrients", "Confirm" , "class='submit btn btn-sm btn-primary style='margin-bottom:2%;''");
 	     					?>
-	     					<a href='<?php echo "../Nutrients"?>' class="btn btn-primary">Back to Nutrients</a>
+	     					<a href='<?php echo "../Nutrients"?>' class="btn btn-sm btn-primary">Back to Nutrients</a>
 							<?php
 							echo '</div>';
 							echo form_close();

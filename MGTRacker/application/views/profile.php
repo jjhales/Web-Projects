@@ -25,9 +25,9 @@
 				?>
 			</div> <!-- close modal body -->
 			<div class="modal-footer">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileEdit">Edit Profile</button>
-			<a href="<?php echo './MGTracker/passwordReset'?>" class="btn btn-primary">Change Password</a>
-			<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#profileEdit">Edit Profile</button>
+			<a href="<?php echo './MGTracker/passwordReset'?>" class="btn btn-primary btn-sm">Change Password</a>
+			<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
 			</div> <!-- close modal footer -->
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->

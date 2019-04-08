@@ -17,7 +17,7 @@
 				     							<h3>Check your email for the next steps.</h3>
 				     						</div>
 				     						<div class="modal-footer">
-				     							<a href='<?php echo "../../"?>' class='btn btn-primary btn-md big-button' style="color:white;">Home</a>
+				     							<a href='<?php echo "../../"?>' class='btn btn-primary btn-sm' style="color:white;">Home</a>
 				     						</div>
 				     					</div> <!-- /.modal-body -->
 									</div><!-- /.modal-content -->

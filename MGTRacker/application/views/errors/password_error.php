@@ -24,8 +24,8 @@
 										?>
 									</div>
 	     						<div class="modal-footer">
-	     							<button type="button" class="btn btn-primary" value="Back" onclick="goBack()">Try Again</button>
-	     							<a href='<?php echo "forgot_password"?>' class="btn btn-primary">Reset Password</a>
+	     							<button type="button" class="btn btn-primary btn-sm" value="Back" onclick="goBack()">Try Again</button>
+	     							<a href='<?php echo "forgot_password"?>' class="btn btn-primary btn-sm">Reset Password</a>
 								</div> <!-- close modal footer -->
 							</div><!-- /.modal-content -->
 						</div><!-- /.modal-dialog -->

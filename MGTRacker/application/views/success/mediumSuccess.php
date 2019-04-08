@@ -61,9 +61,9 @@
 							echo $mediumCost;
 							echo '"readonly"></div></div>';
 							echo '<div style="margin-left:35%; margin-bottom:2%;">';
-	     					echo form_submit("updateMedium", "Add Medium" , "class='submit btn btn-primary'");
+	     					echo form_submit("updateMedium", "Add Medium" , "class='submit btn btn-sm btn-primary' style='margin-bottom:2%;'");
 	     					?>
-	     					<a href='<?php echo "../FarmMaterials"?>' class="btn btn-primary">Back to Materials</a>
+	     					<a href='<?php echo "../FarmMaterials"?>' class="btn btn-sm btn-primary">Back to Materials</a>
 							<?php
 							echo '</div>';
 							echo form_close();

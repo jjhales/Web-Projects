@@ -41,7 +41,7 @@
 	     					?>
 	     					</div> <!--modal-body close-->
 	     					<div class="modal-footer">
-								<a href='<?php echo "../Crops"?>' class="btn btn-primary btn-lg" style="float:right; margin-right:2%; margin-bottom:2%;">Crops</a>
+								<a href='<?php echo "../Crops"?>' class="btn btn-primary btn-sm" style="float:right; margin-right:2%; margin-bottom:2%;">Crops</a>
 							</div> <!-- close modal footer -->
 						</div><!-- /.modal-body -->
 				</div><!-- /.modal-content -->

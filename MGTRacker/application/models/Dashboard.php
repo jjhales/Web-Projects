@@ -102,4 +102,5 @@ class Dashboard extends CI_Model{
 		$query = $this->db->query($sql, $data);
 		return $query->result();
 	}
+	
 }

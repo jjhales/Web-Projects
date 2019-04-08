@@ -49,9 +49,9 @@
 								echo $cropRating;
 								echo '"readonly"></div></div>';
 								echo '<div style="margin-left:50%; margin-bottom:2%;">';
-								echo form_submit("updateEnd", "Update" , "class='submit btn btn-primary'");
+								echo form_submit("updateEnd", "Update" , "class='submit btn btn-sm btn-primary'  style='margin-bottom:2%;'");
 								?>
-	     						<a href='<?php echo "../Crops"?>' class="btn btn-primary">Back to Crops</a>
+	     						<a href='<?php echo "../Crops"?>' class="btn btn-sm btn-primary">Back to Crops</a>
 								<?php
 								echo '</div>';
 								echo form_close();

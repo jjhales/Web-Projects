@@ -10,7 +10,7 @@ echo '<li class="nav-item">';
 echo '<button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal_signin">Log In</button>';
 echo '</li>';
 echo '<li class="nav-item">';
-echo '<button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal_signup">Sign Up</button';
+echo '<button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal_signup">Sign Up</button>';
 echo '</li>';
 echo '</ul>';
 echo '</div>';
@@ -18,4 +18,15 @@ echo '</nav>';
 ?>
 <div class="container">
 <h1>MGTracker</h1>
+<div>
+	<p>Welcome to Mini Garden Tracker. MGTracker allows you to log information about your garden.</p>
+	<ul>
+		<li>Planting from seed to yield</li>
+		<li>Planting from starter plants to yield</li>
+		<li>Nutrient use</li>
+		<li>Inventory seed, plants, medium and equipment</li>
+		<li>Add customers and employees</li>
+	</ul>
+	<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#modal_signup">Sign Up</button>
+</div>
 

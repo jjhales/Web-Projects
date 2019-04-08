@@ -9,6 +9,31 @@ seedVendor = (if seed vendor list)
 seedManufacturer = (if seed manufacturer list)
 seedAmount = grams of seed in inventory
 seedPrice = amount per gram of seed
+username
+company
+
+Plant (table created)
+plantName
+plantVendor
+plantManufacturer
+plantAmount
+plantPrice
+username
+company
+
+PlantCrops (table created)
+plantNumber
+plantName
+plantManufacturer
+plantAmount
+dateStart
+dateEnd
+yieldWeight
+location
+testing
+cropRating
+username
+company
 
 Medium db (table created)
 mediumNumber = autonumber
@@ -19,6 +44,8 @@ mediumMaterial = type
 mediumAmount = medium amount in grams sheets or units
 mediumSize = grams sheets or units (grams is soil)(soil calculator oz/grams)(sheets are 10 X 20 flat sheets)(units would be peat plugs or rockwool)
 mediumCost = cost per gram sheet or units (if a pack has 10 sheets and costs $15.00 then each sheet is 1.50)
+username
+company
 
 Equipment db (table created)
 equipmentName
@@ -28,13 +55,17 @@ equipmentManufacturer
 equipmentPrice
 equipmentAmount
 equipmentPurchaseDate
+username
+company
 
 Crops db (table created)
 flatNumber(autonumber from Crops) 
 seedName (from Seed(seedNumber))= seed name
 seedUsed = amount of seed used in grams
+seedManufacturer
 mediumName(from Medium(mediumNumber)) = medium name
 mediumUsed = number of grams or sheets used
+mediumManufacturer
 location = location of crop added can be updated if crop is moved in germination
 dateStart = plant date
 dateLight = add to lighting rack date
@@ -42,11 +73,29 @@ dateEnd = havest date
 yieldWeight = amount of crop harvested in grams
 testing = true or false
 cropRating = 1 - 5
+username
+company
 
-Nutrients
-ID, name, manufacturer, vendor, size, price
-Nutrient Use
-ID, name, manufacturer, amount, location, use date, inUse
+Nutrients (table created)
+nutrientNumber
+nutrientName
+nutrientManufacturer
+nutrientVendor
+nutrientSize
+nutrientPrice
+username
+company
+
+Nutrient Use (table created)
+nutrientName
+nutrientManufacturer
+nutrientAmount
+location
+nutrientUseDate
+inUse
+nutrientUseID
+username
+company
 
 Customers db (table created)
 customerNumber
@@ -61,19 +110,18 @@ userType
 password
 resetCode
 
-Plant starts purchased(this will include clones or maybe a clone portion will be added) --bought plants will be added in farm materials, added to grow in manage crops -- (no germination time) inventoried under plant reported on dashboard
+Retail (table created)
+productId
+productName
+productType
+productDescription
+productPrice
+username
+company
+
 
 later ***----
 shopping cart
-
-Inventory db
-Fresh Sheet -- inventory -- what's available -- what's expected
-Retail (table created)
-product name =
-packagingSize = 
-retailPrice = 
-wholesalePrice =
-currentCost = 
 
 Order db (table not created)
 purchase number =  
@@ -105,29 +153,7 @@ much much later***-----
  -----***
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Inventories
-*Seed Inventory (v)complete
-query seedName from Seed(total(seedAmount) - Query seedName from Crops total(seedUsed)
-
-*Medium (v)complete
-query mediumName from Medium(total(mediumAmount) - Query mediumName from Crops (total(mediumUsed)
-
-*Seed Inventory(v)complete
-seedName
-Crops yieldWeight - Invoice yieldWeight
-
-Add Farm Materials (v)complete
-*Seed --anytime new seed is purchased 
-	Locations(m = FarmMaterial.php, v = farmMats.php, c = FarmMaterials.php)
-*Medium --anytime new media is purchased 
-	Locations(m = FarmMaterial.php, v = farmMats.php, c = FarmMaterials.php)
-*Equipment --anytime equipment is purchased 
-	Locations(m = FarmMaterial.php, v = farmMats.php, c = FarmMaterials.php)
-
-Nutrients (v)complete
-add nutrients
-use nutrients
-nutrient inventory
+Farm Materials
 
 Add or Update Crops (v)complete
 *CropsAddNew (m = Crop.php v=manageCrops.php c = Crops.php) --anytime a new crop is started
@@ -139,34 +165,71 @@ Nutrients (v)complete
 *location, nutrient name, nutrient manufacturer, nutrient size, date used(complete)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Dashboard (v)in progress 
-Add farm materials link, add/update crops link, Lifetime Harvest, Farm Material Inventories(v)complete
 
-Computed Variables - in progress
-seasonal tracking -- Lifetime harvest by season -- complete
-cost per flat -10X20 flat- flatNumber (seedName, seedUsed x seedPrice) + mediumCost
+Navigation Links (v)complete
+-Farm Materials 
+-Add/update crops
+-Add Nutrients
+-Profile
+-Logout
+
+Sections
+Reports (v)complete
+*Harvest Tracking (v)complete 
+-seasonal tracking 
+-Lifetime harvest by season
+
+Days (v)postponed
 germDays -- total days from dateStart to dateLight
 lightDays -- total days from dateLight to dateEnd 
 totalDays -- germDays + lightDays
 
+Costs (v)postponed
+-cost per flat -10X20 flat- flatNumber (seedName, seedUsed x seedPrice) + mediumCost
+
+Farm Material Inventory (v)complete
+*Seed Inventory (v)complete
+-query seedName from Seed(total(seedAmount) 
+-query seedName from Crops total(seedUsed)
+*Medium (v)complete
+-query mediumName from Medium(total(mediumAmount) 
+-query mediumName from Crops (total(mediumUsed)
+*Plant Inventory (v)complete
+*Nutrients (v)complete
+*Equipment (v)complete
+
+Contacts (v)complete
+-admins can change user roles for employees and customers
+-employees can only view employees and customers
+*employees
+*customers
+
+Users (v)Complete
+-all users only for superadmin
+*customers
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-New Customer or Market 
-*Customer (v)complete --when a new customer/user is added
-new, update
+New Customer or Market (v)complete
 
+Customer Sign Up (v)complete 
+*when a new customer/user is added
 
-*Users (v)complete
-login
-reset password
-create account
+Users (v)complete
+-login
+-reset password
+-create account
 
-Profile page
-Edit profile
-Change Password
+Profile (v)complete
+-Edit profile
+-Change Password
 
-Add admininstrative functions like upgrade customer to user, create an admin type to change users
+Admin functions(v)complete
+-upgrade customer to employee
+-create an superadmin type to change customers to admins for site
+-admin type to change customers to employees for their company
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Sales
-*Inventory (v)later 
+Sales (v)in progress
+
+*Retail (v)in progress 
 current harvest
 expected harvest
 less orders
@@ -208,7 +271,6 @@ Sanitation logging
 washing flats
 washing tanks
 
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *learn html template email creation
 Newsletter for small customers and Commercial customers
@@ -216,3 +278,4 @@ Newsletter for small customers and Commercial customers
 *Newsletter ties into the blog/recipes
 
 *Add images to db??
+

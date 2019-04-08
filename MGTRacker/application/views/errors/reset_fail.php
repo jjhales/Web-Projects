@@ -24,7 +24,7 @@
 										?>
 									</div>
 	     						<div class="modal-footer">
-	     							<button type="button" class="btn btn-primary" value="Back" onclick="goBack()">Try Again</button>
+	     							<button type="button" class="btn btn-primary btn-sm" value="Back" onclick="goBack()">Try Again</button>
 								</div> <!-- close modal footer -->
 							</div><!-- /.modal-content -->
 						</div><!-- /.modal-dialog -->

@@ -64,9 +64,9 @@
 								
 	     						echo '</div>';
 	     						echo '<div style="margin-left:50%; margin-bottom:2%;">';     					
-	     						echo form_submit("cropSubmit", "Add Crop" , "class='submit btn btn-primary'");
+	     						echo form_submit("cropSubmit", "Add Crop" , "class='submit btn btn-primary btn-sm'  style='margin-bottom:2%;'");
 	     						?>
-	     						<a href='<?php echo "../Crops"?>' class="btn btn-primary">Back to Crops</a>
+	     						<a href='<?php echo "../Crops"?>' class="btn btn-primary btn-sm">Back to Crops</a>
 								<?php
 								echo '</div>';
 								echo form_close();

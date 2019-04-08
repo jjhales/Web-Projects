@@ -27,7 +27,7 @@
 							"value" => ""
 						);
 			echo form_input($data);
-			echo '<button id="email_submit" class="btn btn-primary" type="submit">Submit</button>';
+			echo '<button id="email_submit" class="btn btn-primary btn-sm" type="submit">Submit</button>';
 			echo '</p>';
 			echo form_close();
 			echo '</div>';
