@@ -282,7 +282,12 @@ class MGTracker extends CI_Controller{
 				"customerLName" => $this->input->post('lname'),
 				"customerCompany" => $this->input->post('company'),
 				"customerPhone" => $this->input->post('phone'),
-				"CustomerEmail" => $this->input->post('email')
+				"CustomerEmail" => $this->input->post('email'),
+				'customerStreet' => $this->input->post('customerStreet'),
+				'customerTown' => $this->input->post('customerTown'),
+				'customerState' => $this->input->post('customerState'),
+				'customerZip' =>$this->input->post('customerZip')
+
 			);
 			//update db where username matches session data
 			$this->db->where('username',$username);
@@ -298,13 +303,12 @@ class MGTracker extends CI_Controller{
 	}
 	public function assignType(){
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('usertype', 'User Type', 'required');
 
 		if($this->form_validation->run()){
-			$email = $this->input->post('email');
+			$customerNumber = $this->input->post('customerNumber');
 			$usertype = array('usertype'=> $this->input->post('usertype'));
-			$this->db->where('CustomerEmail', $email);
+			$this->db->where('customerNumber', $customerNumber);
 			$this->db->update('customers', $usertype);
 			redirect('Dashboards');
 		}else{
@@ -320,17 +324,18 @@ class MGTracker extends CI_Controller{
 		$this->form_validation->set_rules('lname', 'Last Name', 'required');
 		//if validation is good
 		if($this->form_validation->run()){
-			$email = $this->input->post('email');
+			$customerNumber = $this->input->post('customerNumber');
 			$data = array(
 				"username" => $this->input->post('username'),
 				"customerFName" => $this->input->post('fname'),
 				"customerLName" => $this->input->post('lname'),
 				"customerCompany" => $this->input->post('company'),
+				"CustomerEmail" => $this->input->post('email'),
 				"customerPhone" => $this->input->post('phone'),
 				"usertype" => $this->input->post('usertype')
 			);
 			// inserts user data into db and loads login page
-			$this->db->where('CustomerEmail', $email);
+			$this->db->where('customerNumber', $customerNumber);
 			$this->db->update('customers', $data);
 			redirect('Dashboards');
 		}else{
@@ -339,6 +344,19 @@ class MGTracker extends CI_Controller{
 			$this->load->view('templates/footer');
 		}
 	}
+	public function editAddress(){
+		$customerNumber = $this->input->post('customerNumber');
+		$data = array(
+			'customerStreet' => $this->input->post('customerStreet'),
+			'customerTown' => $this->input->post('customerTown'),
+			'customerState' => $this->input->post('customerState'),
+			'customerZip' =>$this->input->post('customerZip')
+		);
+		$this->db->where('customerNumber', $customerNumber);
+		$this->db->update('customers', $data);
+		redirect('Dashboards');
+
+	}	
 
 }
 

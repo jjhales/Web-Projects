@@ -46,11 +46,26 @@
 				echo '<input type ="text" class="form-control" name = "phone" value ="';
 				echo $value->customerPhone;
 				echo '"></div></div>';
+				echo '<div class="form-row"><div class="col">';
+				echo form_label('Address: ', 'address');
+				echo '<input type ="text" class="form-control" name = "customerStreet" placeholder="street address" value ="';
+				echo $value->customerStreet;
+				echo '">';
+				echo '<input type ="text" class="form-control" name = "customerTown" placeholder="city" value ="';
+				echo $value->customerTown;
+				echo '">';
+				echo '<input type ="text" class="form-control" name = "customerState" placeholder="state" value ="';
+				echo $value->customerState;
+				echo '">';
+				echo '<input type ="text" class="form-control" name = "customerZip" placeholder="zip" value ="';
+				echo $value->customerZip;
+				echo '">';
+				echo '</div>';
 				}
 	     	echo '</div>';
 	     	echo '<div class="modal-footer">';
-	     	echo form_submit("editProfileSubmit", "Submit" , "class='submit btn btn-primary'");
-	     	echo '<a href="Dashboards" class="btn btn-primary">Close</a>';
+	     	echo form_submit("editProfileSubmit", "Submit" , "class='submit btn btn-primary btn-sm'");
+	     	echo '<a href="Dashboards" class="btn btn-primary btn-sm">Close</a>';
 	     	echo form_close();
 	     		?>
 	     	</div> <!-- close modal footer -->

@@ -101,9 +101,14 @@ Customers db (table created)
 customerNumber
 customerFName
 customerLName
-customerCompany
+customerCompany - owner of data - future autofill when individual sites are brought online
+- customerWorkCompany - if customer wants to view your data but is apart of another company like a vendor or customer -future will become Company on insert
 customerPhone
 customerEmail
+-customerStreet
+-customerTown
+-customerState
+-customerZip
 customerNews
 username
 userType

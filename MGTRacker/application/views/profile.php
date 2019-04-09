@@ -20,6 +20,9 @@
 				echo '</p>';
 				echo '<p>Phone Number: ';
 				echo $value->customerPhone;
+				echo '</p>';
+				echo '<p>Address: ';
+				echo $value->customerStreet." ".$value->customerTown.", ".$value->customerState." ".$value->customerZip ;
 				echo '</p>';	
 				}
 				?>
