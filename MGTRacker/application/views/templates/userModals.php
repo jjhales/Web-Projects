@@ -21,7 +21,7 @@
 										"style" => "margin-bottom:1%;",
 										"placeholder" => " Username",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Username",
 										"value" => ""
 									);
@@ -36,7 +36,7 @@
 										"type" => "password",
 										"placeholder" => " Password",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Password",
 										"value" => ""
 									);
@@ -82,7 +82,7 @@
 										"style" => "margin-bottom:1%;",
 										"placeholder" => " First Name",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "First Name",
 										"value" => ""
 									);
@@ -96,7 +96,7 @@
 										"style" => "margin-bottom:1%;",
 										"placeholder" => " Last Name",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Last Name",
 										"value" => ""
 									);
@@ -110,7 +110,7 @@
 										"style" => "margin-bottom:1%;",
 										"placeholder" => " Company",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Company Name",
 										"value" => ""
 									);
@@ -125,7 +125,7 @@
 										"placeholder" => " Phone",
 										"type" => "phone",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Phone",
 										"value" => ""
 									);
@@ -139,7 +139,7 @@
 										"style" => "margin-bottom:1%;",
 										"placeholder" => " Email Address",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Email Address",
 										"value" => ""
 									);
@@ -152,7 +152,7 @@
 										"style" => "margin-bottom:1%;",
 										"placeholder" => " Username",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Username",
 										"value" => ""
 									);
@@ -167,7 +167,7 @@
 										"type" => "password",
 										"placeholder" => " Password",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Password",
 										"value" => ""
 									);
@@ -182,7 +182,7 @@
 										"type" => "password",
 										"placeholder" => " Verify Password",
 										"data-toggle" => "tooltip",
-										"data-placement" => "right",
+										"data-placement" => "left",
 										"title" => "Retype your password",
 										"value" => ""
 									);
